@@ -13,4 +13,4 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'dashboard/about.html', {'title': 'About'})
+    return render(request, 'dashboard/podcast.html', {'title': 'About'})
