@@ -5,7 +5,7 @@ from .models import Role
 
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'role', 'id')
+    list_display = ('user','user_id', 'role', 'role_id')
 
 
 admin.site.register(UserProfile, UserProfileAdmin)
