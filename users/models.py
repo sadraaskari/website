@@ -41,7 +41,17 @@ class Student(models.Model):
     manager_name = models.CharField(max_length=30, default='')
     created_at = models.DateTimeField(default=timezone.now)
 
+
     def __str__(self):
         return self.student.user.username
 
 
+class Exam(models.Model):
+    exam_name = models.CharField(max_length=30, default='')
+    exam_date = models.DateTimeField(default=timezone.now)
+    exam_score = models.IntegerField(default=0)
+    exam_student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.exam_name
