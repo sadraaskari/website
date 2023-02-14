@@ -55,3 +55,16 @@ class Exam(models.Model):
 
     def __str__(self):
         return self.exam_name
+
+
+class SumOfStudy(models.Model):
+    sum_student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    start_time = models.TimeField(default=timezone.now)
+    end_time = models.TimeField(default=timezone.now)
+    test_count = models.IntegerField(default=0)
+    study_time = models.IntegerField(default=0)
+    description = models.TextField(default='')
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.sum_student.student.user.username
