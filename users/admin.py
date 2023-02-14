@@ -8,13 +8,13 @@ class UserProfileAdmin(admin.ModelAdmin):
 class ExamInline(admin.TabularInline):
     model = Exam
     extra = 1
-    readonly_fields = ('pk',)
+    readonly_fields = ('pk','student_id')
 
 
 class SumOfStudyInline(admin.TabularInline):
     model = SumOfStudy
     extra = 1
-    readonly_fields = ('pk',)
+    readonly_fields = ('pk','student_id')
 
 
 class StudentAdmin(admin.ModelAdmin):

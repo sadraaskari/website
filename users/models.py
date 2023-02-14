@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-
 class Role(models.Model):
     role = models.CharField(max_length=30, default='')
+    permission = models.JSONField(default=dict)
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -26,6 +26,7 @@ class UserProfile(models.Model):
 
 class Student(models.Model):
     student = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
     major = models.IntegerField(default=0)
     grade = models.IntegerField(default=0)
     institute = models.CharField(max_length=30, default='')
@@ -41,6 +42,8 @@ class Student(models.Model):
     manager_name = models.CharField(max_length=30, default='')
     created_at = models.DateTimeField(default=timezone.now)
 
+    def user_id(self):
+        return self.student.user.id
 
     def __str__(self):
         return self.student.user.username
@@ -52,6 +55,9 @@ class Exam(models.Model):
     exam_score = models.IntegerField(default=0)
     exam_student = models.ForeignKey(Student, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
+
+    def student_id(self):
+        return self.exam_student.student.id
 
     def __str__(self):
         return self.exam_name
@@ -65,6 +71,9 @@ class SumOfStudy(models.Model):
     study_time = models.IntegerField(default=0)
     description = models.TextField(default='')
     created_at = models.DateTimeField(default=timezone.now)
+
+    def student_id(self):
+        return self.sum_student.student.id
 
     def __str__(self):
         return self.sum_student.student.user.username
