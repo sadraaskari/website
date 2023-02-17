@@ -1,7 +1,6 @@
 from django.db import models
 from users.models import Student
 from django.utils import timezone
-from courses.models import Tutorial
 from users.models import UserProfile
 
 
@@ -24,11 +23,15 @@ class Division(models.Model):
 
 
 class Transaction(models.Model):
+    merchant_id = "1344b5d4-0048-11e8-94db-005056a205be"
     expire_date = models.DateTimeField(default=timezone.now)
-    transaction_value = models.IntegerField(default=0)
-    transaction_code = models.IntegerField(default=0)
+    amount = models.IntegerField(default=0)
+    status = models.IntegerField(default=0)
+    description = models.CharField(max_length=100, default='')
     transaction_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
+    callback_url = "http://example.com/accounting/payment/status/"
+    ref_id = models.IntegerField(default=0)
 
     def user_id(self):
         return self.transaction_user.user.id

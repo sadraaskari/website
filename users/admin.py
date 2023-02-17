@@ -3,6 +3,7 @@ from .models import UserProfile, Role, Student, Exam, SumOfStudy
 
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user','user_id', 'role', 'role_id')
+    list_filter = ('role_id','user_id')
 
 
 class ExamInline(admin.TabularInline):
