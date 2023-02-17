@@ -5,6 +5,7 @@ from .forms import SendSMSForm
 
 class CounselingRequestAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'created_at', 'access_code', 'pk')
+    ordering = ('-created_at',)
 
     def __str__(self):
         return self.name
