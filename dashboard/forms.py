@@ -1,5 +1,6 @@
 from django import forms
-from .models import CounselingRequest
+from .models import CounselingRequest, SendSMS
+from users.models import UserProfile
 
 
 class CounselingRequestForm(forms.ModelForm):
@@ -21,3 +22,20 @@ class CounselingRequestForm(forms.ModelForm):
         if commit:
             counseling_request.save()
         return counseling_request
+
+
+class SendSMSForm(forms.ModelForm):
+
+    users = forms.ModelMultipleChoiceField(queryset=UserProfile.objects.all(), widget=forms.CheckboxSelectMultiple)
+
+    class Meta:
+        model = SendSMS
+        fields = ('users', 'text')
+
+    def clean(self):
+        cleaned_data = super().clean()
+        users = cleaned_data.get('users')
+        text = cleaned_data.get('text')
+        for user in users:
+            SendSMS(to=user.phone, text=text).send(to=user.phone, text=text)
+        return cleaned_data

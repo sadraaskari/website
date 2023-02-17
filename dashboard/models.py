@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from users.models import UserProfile
+from melipayamak import Api
 
 
 class CounselingRequest(models.Model):
@@ -39,3 +40,27 @@ class Message(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Option(models.Model):
+    option_key = models.CharField(max_length=30, default='')
+    option_value = models.CharField(max_length=100, default='')
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.option_key
+
+
+class SendSMS(models.Model):
+
+    to = models.CharField(max_length=100, default='')
+    text = models.CharField(max_length=100, default='')
+
+    def send(self, to, text):
+        username = Option.objects.get(option_key='username').option_value
+        password = Option.objects.get(option_key='password').option_value
+        sender = Option.objects.get(option_key='sender_number').option_value
+        api = Api(username, password)
+        sms = api.sms()
+        response = sms.send(to=to, _from=sender, text=text)
+        return response

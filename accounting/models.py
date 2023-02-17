@@ -2,6 +2,7 @@ from django.db import models
 from users.models import Student
 from django.utils import timezone
 from users.models import UserProfile
+from dashboard.models import Option
 
 
 class Payment(models.Model):
@@ -23,14 +24,14 @@ class Division(models.Model):
 
 
 class Transaction(models.Model):
-    merchant_id = "1344b5d4-0048-11e8-94db-005056a205be"
+    merchant_id = Option.objects.get(option_key='merchant_id').option_value
     expire_date = models.DateTimeField(default=timezone.now)
     amount = models.IntegerField(default=0)
     status = models.IntegerField(default=0)
-    description = models.CharField(max_length=100, default='')
+    description = Option.objects.get(option_key='description').option_value
     transaction_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
-    callback_url = "http://example.com/accounting/payment/status/"
+    callback_url = Option.objects.get(option_key='callback_url').option_value
     ref_id = models.IntegerField(default=0)
 
     def user_id(self):

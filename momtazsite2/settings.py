@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'melipayamak',
     'requests',
-    'rest_framework',
     'accounting.apps.AccountingConfig',
     'users.apps.UsersConfig',
     'courses.apps.CoursesConfig',
