@@ -1,8 +1,8 @@
 from django import forms
-from .models import CounselingRequest, SendSMS
+from .models import CounselingRequest, SendSMS, Ticket
 from users.models import UserProfile
-from django.contrib.auth.forms import PasswordResetForm
 import secrets
+from django.contrib.admin.widgets import FilteredSelectMultiple
 
 
 class CounselingRequestForm(forms.ModelForm):
@@ -63,3 +63,25 @@ class SMSPasswordResetForm(forms.Form):
         else:
             raise forms.ValidationError('شماره موبایل وارد شده در سیستم ثبت نشده است.')
         return cleaned_data
+
+
+class TicketForm(forms.ModelForm):
+    receivers = forms.ModelMultipleChoiceField(queryset=UserProfile.objects.all(), widget=FilteredSelectMultiple('receivers', False))
+
+
+    class Meta:
+        model = Ticket
+        fields = ['title', 'pay_request', 'description', 'receivers', 'sender']
+
+
+
+
+    def clean(self):
+        cleaned_data = super().clean()
+        sender = cleaned_data.get('sender')
+        receivers = cleaned_data.get('receivers')
+        for receiver in receivers:
+            ticket = Ticket.objects.create(sender=sender, receiver=receiver, title=cleaned_data['title'], description=cleaned_data['description'], pay_request=cleaned_data['pay_request'])
+            ticket.save()
+        return cleaned_data
+

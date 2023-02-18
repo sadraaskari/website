@@ -24,13 +24,13 @@ class SliderImage(models.Model):
         return self.title
 
 
-class Message(models.Model):
+class Ticket(models.Model):
     title = models.CharField(max_length=30, default='')
     pay_request = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
     description = models.TextField(default='')
     sender = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    receiver = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='receiver')
+    receiver = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,null=True, related_name='receiver')
 
     def sender_id(self):
         return self.sender.user.id

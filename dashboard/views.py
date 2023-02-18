@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Ticket
+from .forms import TicketForm
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     dash = {
@@ -14,5 +17,6 @@ def home(request):
 
 def about(request):
     return render(request, 'dashboard/podcast.html', {'title': 'About'})
+
 
 
