@@ -78,3 +78,5 @@ class SumOfStudy(models.Model):
 
     def __str__(self):
         return self.sum_student.student.user.username
+
+

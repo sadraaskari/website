@@ -1,6 +1,8 @@
 from django import forms
 from .models import CounselingRequest, SendSMS
 from users.models import UserProfile
+from django.contrib.auth.forms import PasswordResetForm
+import secrets
 
 
 class CounselingRequestForm(forms.ModelForm):
@@ -38,4 +40,26 @@ class SendSMSForm(forms.ModelForm):
         text = cleaned_data.get('text')
         for user in users:
             SendSMS(to=user.phone, text=text).send(to=user.phone, text=text)
+        return cleaned_data
+
+
+class SMSPasswordResetForm(forms.Form):
+    phone = forms.CharField(max_length=11, required=True)
+
+    def send_sms(self, phone, token):
+        message = 'کد بازیابی رمز عبور شما: ' + token
+        SendSMS().send(to=phone, text=message)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        phone = cleaned_data.get('phone')
+
+        if UserProfile.objects.filter(phone=phone).exists():
+            token = secrets.token_hex(4)
+            user = UserProfile.objects.get(phone=phone).user
+            user.set_password(token)
+            user.save()
+            self.send_sms(phone=phone, token=token)
+        else:
+            raise forms.ValidationError('شماره موبایل وارد شده در سیستم ثبت نشده است.')
         return cleaned_data

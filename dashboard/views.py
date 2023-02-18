@@ -14,3 +14,5 @@ def home(request):
 
 def about(request):
     return render(request, 'dashboard/podcast.html', {'title': 'About'})
+
+

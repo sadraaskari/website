@@ -12,19 +12,19 @@ def get_support_names():
         support_names.append((support.user_id, support.user.username))
     return support_names
 
+
 def get_counselor_names():
     counselor_names = []
     for counselor in UserProfile.objects.filter(role__role='counselor'):
         counselor_names.append((counselor.user_id, counselor.user.username))
     return counselor_names
 
+
 def get_manager_names():
     manager_names = []
     for manager in UserProfile.objects.filter(role__role='manager'):
         manager_names.append((manager.user_id, manager.user.username))
     return manager_names
-
-
 
 
 class UserRegisterForm(UserCreationForm):
@@ -52,13 +52,6 @@ class UserRegisterForm(UserCreationForm):
         userprofile.online_or_offline = self.cleaned_data['online_or_offline']
         if commit:
             userprofile.save()
-
-
-
-
-
-
-
 
 
 class StudentRegisterForm(UserCreationForm):
