@@ -71,7 +71,7 @@ class TicketForm(forms.ModelForm):
 
     class Meta:
         model = Ticket
-        fields = ['title', 'pay_request', 'description', 'receivers', 'sender','sms']
+        fields = ['title', 'pay_request', 'description', 'receivers', 'sender', 'sms']
 
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
@@ -82,11 +82,8 @@ class TicketForm(forms.ModelForm):
         sender = cleaned_data.get('sender')
         receivers = cleaned_data.get('receivers')
         for receiver in receivers:
-            ticket = Ticket.objects.create(sender=sender, receiver=receiver, title=cleaned_data['title'],
-                                           description=cleaned_data['description'],
-                                           pay_request=cleaned_data['pay_request'])
+            Ticket.objects.create(sender=sender, receiver=receiver, title=cleaned_data['title'],
+                                  description=cleaned_data['description'], pay_request=cleaned_data['pay_request'])
             if cleaned_data['sms']:
                 SendSMS().send(to=receiver.phone, text=self.cleaned_data['title'])
-                ticket.save()
         return cleaned_data
-

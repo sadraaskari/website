@@ -42,6 +42,10 @@ class TicketAdmin(admin.ModelAdmin):
         form.base_fields['sender'].queryset = UserProfile.objects.filter(user=request.user)
         return form
 
+    def save_model(self, request, obj, form, change):
+        if obj.receiver is not None:
+            obj.save()
+
 
 admin.site.register(CounselingRequest, CounselingRequestAdmin)
 admin.site.register(SliderImage, SliderImageAdmin)
