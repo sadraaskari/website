@@ -37,6 +37,11 @@ class TicketAdmin(admin.ModelAdmin):
     form = TicketForm
     list_display = ('title', 'pay_request', 'created_at', 'sender','sender_id', 'receiver', 'receiver_id', 'pk')
 
+    def get_form(self, request, obj=None, change=False, **kwargs):
+        form = super(TicketAdmin, self).get_form(request, obj, **kwargs)
+        form.base_fields['sender'].queryset = UserProfile.objects.filter(user=request.user)
+        return form
+
 
 admin.site.register(CounselingRequest, CounselingRequestAdmin)
 admin.site.register(SliderImage, SliderImageAdmin)

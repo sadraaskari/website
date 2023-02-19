@@ -66,22 +66,27 @@ class SMSPasswordResetForm(forms.Form):
 
 
 class TicketForm(forms.ModelForm):
-    receivers = forms.ModelMultipleChoiceField(queryset=UserProfile.objects.all(), widget=FilteredSelectMultiple('receivers', False))
-
+    receivers = forms.ModelMultipleChoiceField(queryset=UserProfile.objects.all(),
+                                               widget=FilteredSelectMultiple('receivers', False))
 
     class Meta:
         model = Ticket
-        fields = ['title', 'pay_request', 'description', 'receivers', 'sender']
+        fields = ['title', 'pay_request', 'description', 'receivers', 'sender','sms']
 
-
-
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(TicketForm, self).__init__(*args, **kwargs)
 
     def clean(self):
         cleaned_data = super().clean()
         sender = cleaned_data.get('sender')
         receivers = cleaned_data.get('receivers')
         for receiver in receivers:
-            ticket = Ticket.objects.create(sender=sender, receiver=receiver, title=cleaned_data['title'], description=cleaned_data['description'], pay_request=cleaned_data['pay_request'])
-            ticket.save()
+            ticket = Ticket.objects.create(sender=sender, receiver=receiver, title=cleaned_data['title'],
+                                           description=cleaned_data['description'],
+                                           pay_request=cleaned_data['pay_request'])
+            if cleaned_data['sms']:
+                SendSMS().send(to=receiver.phone, text=self.cleaned_data['title'])
+                ticket.save()
         return cleaned_data
 

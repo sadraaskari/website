@@ -31,6 +31,7 @@ class Ticket(models.Model):
     description = models.TextField(default='')
     sender = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     receiver = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,null=True, related_name='receiver')
+    sms = models.BooleanField(default=False)
 
     def sender_id(self):
         return self.sender.user.id
