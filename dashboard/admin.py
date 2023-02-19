@@ -35,7 +35,7 @@ class SendSMSAdmin(admin.ModelAdmin):
 
 class TicketAdmin(admin.ModelAdmin):
     form = TicketForm
-    list_display = ('title', 'pay_request', 'created_at', 'sender', 'receiver', 'pk')
+    list_display = ('title', 'pay_request', 'created_at', 'sender','sender_id', 'receiver', 'receiver_id', 'pk')
 
 
 admin.site.register(CounselingRequest, CounselingRequestAdmin)
