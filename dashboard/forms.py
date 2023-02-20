@@ -87,3 +87,10 @@ class TicketForm(forms.ModelForm):
             if cleaned_data['sms']:
                 SendSMS().send(to=receiver.phone, text=self.cleaned_data['title'])
         return cleaned_data
+
+
+class StudentTicketForm(forms.ModelForm):
+
+    class Meta:
+        model = Ticket
+        fields = ['title', 'description']
