@@ -15,7 +15,7 @@ class Role(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     father_name = models.CharField(max_length=30, default='')
-    phone = models.CharField(max_length=30, default='')
+    phone = models.CharField(max_length=30, default='', unique=True)
     online_or_offline = models.IntegerField(default=0)
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)

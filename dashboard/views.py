@@ -38,3 +38,4 @@ def all_tickets(request):
     tickets_received = Ticket.objects.filter(receiver=request.user.userprofile)
 
     return render(request, 'dashboard/all_tickets.html', {'tickets_sent': tickets_sent, 'tickets_received': tickets_received})
+

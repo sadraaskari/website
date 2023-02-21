@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from .models import Tutorial
 
 def home(request):
-    return render(request, 'courses/home.html')
+    context = {
+        'tutorials': Tutorial.objects.all()
+    }
+
+    return render(request, 'courses/home.html', context)

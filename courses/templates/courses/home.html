@@ -1,4 +1,9 @@
 {% extends 'courses/base.html' %}
 {% block content %}
     <h1>Home</h1>
+    {% for tutorial in tutorials %}
+        <h1>{{ tutorial.title }}</h1>
+        <p>by {{ tutorial.tutorial_creator }} on {{ tutorial.created_at}} </p>
+        <p>{{ tutorial.tutorial_content }}</p>
+    {% endfor %}
 {% endblock %}

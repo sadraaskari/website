@@ -1,9 +1,30 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import StudentRegisterForm
+from .forms import StudentRegisterForm, PhoneNumberValidatorForm, ValidationCodeForm
 from dashboard.forms import SMSPasswordResetForm
 from django.contrib.auth import views as auth_views
+
+
+def register_validation(request):
+    if request.method == 'POST':
+        form = PhoneNumberValidatorForm(request.POST)
+        if form.is_valid():
+            form.send_sms()
+            return redirect('users-register_validation_code')
+    else:
+        form = PhoneNumberValidatorForm()
+    return render(request, 'users/register_validation.html', {'form': form})
+
+
+def register_validation_code(request):
+    if request.method == 'POST':
+        form = ValidationCodeForm(request.POST)
+        if form.is_valid():
+            return redirect('users-register')
+    else:
+        form = ValidationCodeForm()
+    return render(request, 'users/register_validation_code.html', {'form': form})
 
 
 def home(request):
