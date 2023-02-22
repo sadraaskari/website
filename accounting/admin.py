@@ -14,7 +14,7 @@ class PaymentAdmin(admin.ModelAdmin):
 
 
 class TransactionAdmin(admin.ModelAdmin):
-    list_display = ('user_id', 'created_at', 'pk')
+    list_display = ('user_id', 'created_at', 'status', 'pk')
     ordering = ('-created_at',)
 
     def user_id(self, obj):

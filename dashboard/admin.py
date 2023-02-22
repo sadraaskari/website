@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import CounselingRequest, SliderImage, Message, Option, SendSMS
-from .forms import SendSMSForm
+from .models import CounselingRequest, SliderImage, Ticket, Option, SendSMS
+from .forms import SendSMSForm, TicketForm
+from users.models import UserProfile
 
 
 class CounselingRequestAdmin(admin.ModelAdmin):
@@ -13,13 +14,6 @@ class CounselingRequestAdmin(admin.ModelAdmin):
 
 class SliderImageAdmin(admin.ModelAdmin):
     list_display = ('created_at', 'title', 'pk', 'image')
-
-    def __str__(self):
-        return self.title
-
-
-class MessageAdmin(admin.ModelAdmin):
-    list_display = ('title', 'pay_request', 'created_at', 'pk', 'sender_id', 'receiver_id')
 
     def __str__(self):
         return self.title
@@ -39,8 +33,22 @@ class SendSMSAdmin(admin.ModelAdmin):
     actions = ['clean']
 
 
+class TicketAdmin(admin.ModelAdmin):
+    form = TicketForm
+    list_display = ('title', 'pay_request', 'created_at', 'sender','sender_id', 'receiver', 'receiver_id', 'pk')
+
+    def get_form(self, request, obj=None, change=False, **kwargs):
+        form = super(TicketAdmin, self).get_form(request, obj, **kwargs)
+        form.base_fields['sender'].queryset = UserProfile.objects.filter(user=request.user)
+        return form
+
+    def save_model(self, request, obj, form, change):
+        if obj.receiver is not None:
+            obj.save()
+
+
 admin.site.register(CounselingRequest, CounselingRequestAdmin)
 admin.site.register(SliderImage, SliderImageAdmin)
-admin.site.register(Message, MessageAdmin)
+admin.site.register(Ticket, TicketAdmin)
 admin.site.register(Option, OptionAdmin)
 admin.site.register(SendSMS, SendSMSAdmin)

@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Student
-from .models import UserProfile
-from .models import Role
+from .models import Student, UserProfile, Role
+from dashboard.models import SendSMS
+import secrets
 
 
 def get_support_names():
@@ -12,11 +12,13 @@ def get_support_names():
         support_names.append((support.user_id, support.user.username))
     return support_names
 
+
 def get_counselor_names():
     counselor_names = []
     for counselor in UserProfile.objects.filter(role__role='counselor'):
         counselor_names.append((counselor.user_id, counselor.user.username))
     return counselor_names
+
 
 def get_manager_names():
     manager_names = []
@@ -25,6 +27,36 @@ def get_manager_names():
     return manager_names
 
 
+class ValidationCodeForm(forms.Form):
+    validation_code = forms.CharField(max_length=8, required=True)
+    verifier = 0
+
+    def clean_validation_code(self):
+        code = self.cleaned_data['validation_code']
+        if code != self.verifier:
+            raise forms.ValidationError('کد تایید صحیح نیست')
+        return code
+
+
+class PhoneNumberValidatorForm(forms.Form):
+    phone = forms.IntegerField(required=True)
+
+    def send_sms(self):
+        phone = self.cleaned_data['phone']
+        code = secrets.token_hex(4)
+        ValidationCodeForm.verifier = code
+        text = 'کد تایید شما: ' + code
+        SendSMS().send(to=phone, text=text)
+
+    def save(self, commit=True):
+        phone = self.cleaned_data['phone']
+        user = User.objects.create_user(username=phone, password=phone)
+        userprofile = UserProfile.objects.create(user=user)
+        userprofile.phone = phone
+        if commit:
+            user.save()
+            userprofile.save()
+        return userprofile
 
 
 class UserRegisterForm(UserCreationForm):
@@ -52,13 +84,6 @@ class UserRegisterForm(UserCreationForm):
         userprofile.online_or_offline = self.cleaned_data['online_or_offline']
         if commit:
             userprofile.save()
-
-
-
-
-
-
-
 
 
 class StudentRegisterForm(UserCreationForm):

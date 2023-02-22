@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+  <h1>All Tickets</h1>
+
+  <h2>Tickets Sent</h2>
+  <ul>
+    {% for ticket in tickets_sent %}
+      <li>{{ ticket.title }} - {{ ticket.created_at }}</li>
+    {% empty %}
+      <li>No tickets sent.</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Tickets Received</h2>
+  <ul>
+    {% for ticket in tickets_received %}
+      <li>{{ ticket.title }} - {{ ticket.created_at }}</li>
+    {% empty %}
+      <li>No tickets received.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

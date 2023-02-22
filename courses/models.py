@@ -10,6 +10,8 @@ class Tutorial(models.Model):
     tutorial_price = models.IntegerField(default=0)
     tutorial_discount = models.IntegerField(default=0)
     tutorial_image = models.ImageField(upload_to='tutorial_images', blank=True)
+    tutorial_content = models.TextField(default='')
+    tutorial_file = models.FileField(upload_to='tutorial_files', blank=True)
     status = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
 
