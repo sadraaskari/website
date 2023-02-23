@@ -17,7 +17,7 @@ class UserProfile(models.Model):
     father_name = models.CharField(max_length=30, default='')
     phone = models.CharField(max_length=30, default='', unique=True)
     online_or_offline = models.IntegerField(default=0)
-    role = models.ForeignKey(Role, on_delete=models.CASCADE)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE, default=4)
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
@@ -70,7 +70,7 @@ class SumOfStudy(models.Model):
     end_time = models.TimeField(default=timezone.now)
     test_count = models.IntegerField(default=0)
     study_time = models.IntegerField(default=0)
-    description = models.TextField(default='')
+    description = models.TextField(default='', blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
     def student_id(self):
