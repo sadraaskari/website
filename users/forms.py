@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Student, UserProfile, Role
 from dashboard.models import SendSMS
 import secrets
+import re
 
 
 def get_support_names():
@@ -57,9 +58,15 @@ class BasicRegistration(UserCreationForm):
 
     def send_sms(self):
         phone = self.cleaned_data['phone']
-        ValidationCodeForm.verifier = self.code
-        text = 'کد تایید شما: ' + self.code
-        SendSMS().send(to=phone, text=text)
+        phone_number = str(phone)
+        if UserProfile.objects.filter(phone=phone).exists():
+            raise forms.ValidationError('شماره تلفن وارد شده قبلا ثبت شده است')
+        elif not re.match(r'^9\d{9}$', str(phone_number)):
+            raise forms.ValidationError('شماره تلفن وارد شده صحیح نیست')
+        else:
+            ValidationCodeForm.verifier = self.code
+            text = 'کد تایید شما: ' + self.code
+            SendSMS().send(to=phone, text=text)
 
     def save(self, commit=True):
         user = super().save(commit=False)
