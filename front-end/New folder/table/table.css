@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+body{
+    background-color: gray;
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-color: #202020;
+    color: orange;
+    border: none;
+    border-radius: 15px;
+    text-align: right;
+    
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  margin-bottom: 12px;
+}
+    #myInput:hover{
+        border: 1px solid orange;
+        transform: scale(1.1);
+        transform: translateY(-5px);
+        transition: 1s;
+        background-color: white;
+        color: black;
+    }
+#myTable {
+    border: none;
+    border-radius: 15px;
+  border-collapse: collapse;
+  width: 100%;
+  
+  font-size: 18px;
+    background-color: #202020;
+    color: white;
+}
+
+#myTable:hover{
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #202020;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  opacity: 80%;
+    transition: 0.5s;
+    color: orange;
+}
+    .divForm{
+        width: 50%;
+        margin-left: 25%;
+    }
