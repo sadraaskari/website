@@ -27,8 +27,13 @@ class StudentAdmin(admin.ModelAdmin):
     list_filter = ('major', 'grade', 'support_id', 'counselor_id', 'manager_id')
 
 
+class RoleAdmin(admin.ModelAdmin):
+    list_display = ('role', 'pk')
+    list_filter = ('role',)
+
+
 admin.site.register(UserProfile, UserProfileAdmin)
-admin.site.register(Role)
+admin.site.register(Role, RoleAdmin)
 admin.site.register(Student, StudentAdmin)
 
 
