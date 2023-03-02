@@ -12,7 +12,8 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <title>CoreUI Free Bootstrap Admin Template</title>
 	
-	
+	<link rel="stylesheet" href="table/table.css">
+	<script src="table/table.js"></script>
 	<!--<link rel="stylesheet" href="newCss/footer.css">-->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
@@ -246,10 +247,49 @@
           </nav>
         </div>
       </header>
+		<div class="divForm"><input type="text" id="myInput" onkeyup="myFunction()" placeholder="...جست و جوی نام" title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+	  <th>نام</th>
+	  <th>نام خانوادگی</th>
+	  <th>شماره تماس</th>
+    <th>پایه تحصیلی</th>
+    
+    
+    
+  </tr>
+  <tr onclick="anotherPage(1);">
+	  <td>سعید</td>
+	   <td>ممتاز</td>
+	  <td>12346777</td>
+    <td>12</td>
+ 
+   
+    
+  </tr>
+  <tr onclick="anotherPage(2);">
+    <td>وحید</td>
+	  <td>پیشتاز</td>
+	  <td>33943348</td>
+	   <td>11</td>
+  </tr>
+  <tr onclick="anotherPage(3);">
+	  <td>مجید</td>
+	  <td>مرتاز</td>
+	  <td>33949869</td>
+    <td>10</td>
+    
+    
+    
+  </tr>
+</table>
     </div>
+    </div>
+	
 	<footer class="footer">
         <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> &copy; 2022 creativeLabs.</div>
-        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">سایت معرفی مشاوره</a></div>
+        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">سایت معرفی مشاورخ</a></div>
       </footer>
 <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="vendors/simplebar/js/simplebar.min.js"></script>
