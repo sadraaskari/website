@@ -11,11 +11,9 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <title>CoreUI Free Bootstrap Admin Template</title>
-	<link rel="stylesheet" href="newCss/slider/slider.css">
-	<link rel="stylesheet" href="newCss/sk/page1.css">
-	<link rel="stylesheet" href="newCss/footer/footer.css">
-	<script src="newCss/slider/slider.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	
+	<link rel="stylesheet" href="table/table.css">
+	<script src="table/table.js"></script>
 	<!--<link rel="stylesheet" href="newCss/footer.css">-->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
@@ -93,7 +91,7 @@
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
             </svg> دوره ها</a></li>
-        <li class="nav-item"><a class="nav-link" href="users.html">
+        <li class="nav-item"><a class="nav-link" href="">
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
             </svg> کاربران</a></li>
@@ -249,107 +247,56 @@
           </nav>
         </div>
       </header>
-		<div class="slideshow-container">
+		<div class="divForm"><input type="text" id="myInput" onkeyup="myFunction()" placeholder="...جست و جوی نام" title="Type in a name">
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="newCss/slider/photo-1465101162946-4377e57745c3.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="newCss/slider/earth-1756274__340.png" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="newCss/slider/earth-1756274__340.png" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-		<div class="divs">
-		<div class="skewed" style="display: inline-flex;">
-			<div class="text" style="display: flex;">
-				<!--<h3>دوره های مشاوره</h3>
-				<p>این دوره ها مخصوص دانش آموزان پایه دوازدهم و کنکوری میباشد که شامل مدیریت زمان و تست زنی با برنامه است</p>
-				<small>قیمت دوره:2000000 تومان</small>
-				<a  class="a1" href="#">اطلاعات بیشتر&rarr;</a>-->
-			</div>
-			<div class="image">
-					<div><img src="newCss/sk/201020.jpg" alt="img"></div>
-				</div>
-		</div>
-		
-		<div class="skewed" style="display: flex;">
-			<div class="image">
-					<div><img src="newCss/sk/wp3432616.jpg" alt="img"></div>
-				</div>
-			<div class="text">
-				<!--<h3>دوره های تندخوانی</h3>
-				<p>آموزش انواع متدهای تندخوانی با بازده بالا و صرفه جویی در زمان</p>
-				<small>قیمت دوره:1000000 تومان</small>
-				<a class="a1" href="#">اطلاعات بیشتر &rarr;</a>-->
-			</div>
-		</div>
-	</div>
-	</div>
-	<footer class="ftr" dir="ltr">
-		<div class="ctr">
-			<div class="rw">
-				<div class="footer-col">
-					<h4>آموزشگاه</h4>
-					<ul>
-						<li><a href="#">کلاس</a></li>
-						<li><a href="#">دوره</a></li>
-						<li><a href="#">همایش</a></li>
-						<li><a href="#">جشن</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>پشتیبانی</h4>
-					<ul>
-						<li><a href="#">تلفن</a></li>
-						<li><a href="#">آدرس</a></li>
-						<li><a href="#">تلگرام</a></li>
-						<li><a href="#">آدرس خونه ممتاز</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>مشاورها</h4>
-					<ul>
-						<li><a href="#">عزیزمرادی</a></li>
-						<li><a href="#">یامینی</a></li>
-						<li><a href="#">تاجیک</a></li>
-						<li><a href="#">سمسار</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>دنبال کردن</h4>
-					<div class="social-links">
-						<a href="#"><i class="fab fa-facebook-f"></i></a>
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<a href="#"><i class="fab fa-instagram"></i></a>
-						<a href="#"><i class="fab fa-linkedin-in"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-    </div><!--end of element of body-->
+<table id="myTable">
+  <tr>
+	  <th>نام</th>
+	  <th>نام خانوادگی</th>
+	  <th>شماره تماس</th>
+	  <th>نقش</th>
+  </tr>
+  <tr onclick="anotherPage(1);">
+	  <td>سعید</td>
+	   <td>ممتاز</td>
+	  <td>12346777</td>
+    <td>ادمین</td>
+ 
+   
+    
+  </tr>
+  <tr onclick="anotherPage(2);">
+    <td>وحید</td>
+	  <td>پیشتاز</td>
+	  <td>33943348</td>
+	   <td>مشاور</td>
+  </tr>
+  <tr onclick="anotherPage(3);">
+	  <td>مجید</td>
+	  <td>مرتاز</td>
+	  <td>33949869</td>
+    <td>دانش آموز</td>
+    
+    
+    
+  </tr>
+	<tr onclick="anotherPage(4);">
+	  <td>حسین</td>
+	  <td>یامینی</td>
+	  <td>10139323</td>
+    <td>مشاور</td>
+    
+    
+    
+  </tr>
+</table>
+    </div>
+    </div>
 	
+	<footer class="footer">
+        <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> &copy; 2022 creativeLabs.</div>
+        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">سایت معرفی مشاورخ</a></div>
+      </footer>
 <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="vendors/simplebar/js/simplebar.min.js"></script>
     <!-- Plugins and scripts required by this view-->
