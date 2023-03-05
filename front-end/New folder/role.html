@@ -106,7 +106,7 @@
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
             </svg> دانش آموزان</a></li>
-		  <li class="nav-item"><a class="nav-link" href="role.html">
+		  <li class="nav-item"><a class="nav-link" href="table.html">
             <svg class="nav-icon">
               <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
             </svg>نقش ها</a></li>
@@ -233,79 +233,62 @@
           </nav>
         </div>
       </header>
-		<div style="background-image: url('newCss/images.jpg'); background-size: cover; height: 100%;">
-			<div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">  
-                <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
-            <div class="item"> 
-                <div class="carousel-caption">
-                  <h3>Second slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
-            <div class="item"> 
-                <div class="carousel-caption">
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carouselFade" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-			
-			
-			<div class="divs">
-		<div class="skewed">
-			<div class="image">
-					<div><img src="newCss/sk/201020.jpg" alt="img"></div>
-				</div>
-			<div class="text">
-				<h3>برنامه ریزی کنکور</h3>
-				<p>مشاوره و برنامه ریزی منظم برای موفقیت در کنکور</p>
-				<small>قیمت دوره:2000000 تومان</small>
-				<a class="a1" href="#" dir="ltr">اطلاعات بیشتر &rarr;</a>
+		<style type="text/css">
+			.roles{
+				width: 100%:
+			}
+			.roleShow{
+				background-color: #202020;
+				width: 33%;
+				height: 50vh;
+				display: inline-table;
+				border-radius: 15px;
+				border: none;
+				box-shadow: 1px 1px ;
+				color: wheat;
+			}
+			.roleShow p{
+				color: orange;
+				font-size: 20px;
+				text-align: center;
+			}
+		</style>
+		<div class="roles">
+			<div class="roleShow"><p>نقش ها</p>
+				<hr>
+			1-ادمین
+				<br>
+			2-مشاور
+				<br>
+			3-دانش آموز
+				<br>
+			4-کاربر عادی
+				<br>
 			</div>
-		</div>
-		
-		<div class="skewed">
-			<div class="image">
-					<div><img src="newCss/sk/wp3432616.jpg" alt="img"></div>
-				</div>
-			<div class="text">
-				<h3>دوره های تندخوانی</h3>
-				<p>آموزش انواع متدهای تندخوانی با بازده بالا و صرفه جویی در زمان</p>
-				<small>قیمت دوره:1000000 تومان</small>
-				<a class="a1" href="#">اطلاعات بیشتر &rarr;</a>
+			<div class="roleShow"><p>ویرایش نقش</p><hr>
+				<input type="text" placeholder="نقش جدید"><button>اضافه</button>
+				<br>
+				<select>
+					<option>ادمین</option>
+					<option>مشاور</option>
+					<option>دانش آموز</option>
+					<option>کاربر عادی</option>
+				</select>
+				<button>حذف</button>
 			</div>
-		</div>
-				<div class="skewed">
-			<div class="image">
-					<div><img src="newCss/sk/wp3432620.webp" alt="img"></div>
-				</div>
-			<div class="text">
-				<h3>برنامه ریزی کنکور</h3>
-				<p>مشاوره و برنامه ریزی منظم برای موفقیت در کنکور</p>
-				<small>قیمت دوره:2000000 تومان</small>
-				<a class="a1" href="#" dir="ltr">اطلاعات بیشتر &rarr;</a>
+			<div class="roleShow"><p>سطح دسترسی نقش ها</p><hr>
+				<select>
+					<option>ادمین</option>
+					<option>مشاور</option>
+					<option>دانش آموز</option>
+					<option>کاربر عادی</option>
+				</select>
+				<br>
+				کاربران<input type="checkbox"><br>
+				دوره ها<input type="checkbox"><br>
+				حساب داری<input type="checkbox"><br>
+				<button>ثبت</button>
 			</div>
-		</div>
-	</div>
 		</div>
 	</div>
 	<footer class="ftr" dir="ltr">
