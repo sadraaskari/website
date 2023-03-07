@@ -1,0 +1,47 @@
+.roles{
+			width: 100%:
+			}
+			.roleShow{
+				background-color: #202020;
+				width: 33%;
+				height: 50vh;
+				display: inline-table;
+				border-radius: 15px;
+				border: none;
+				box-shadow: 1px 1px ;
+				color: wheat;
+			}
+			.roleShow p{
+				color: orange;
+				font-size: 20px;
+				text-align: center;
+			}
+.roleShow input[type = text]{
+	width: 50%;
+	margin-bottom: 5px;
+	border: none;
+	padding: 5px;
+	margin-right: 2px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: white;
+	color: black;
+}
+.roleShow button{
+	width: 25%;
+	margin-bottom: 5px;
+	border: 1px solid #202020;
+	padding: 5px;
+	background-color: white;
+	color: black;
+}
+.roleShow button:hover{
+	opacity: 80%;
+	transition: 0.5s;
+	background-color: blue;
+	color: white;
+}
+.roleShow select{
+	padding: 5px;
+	margin-right: 2px;
+}
