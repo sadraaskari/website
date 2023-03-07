@@ -1,8 +1,48 @@
 {% extends 'dashboard/base.html' %}
+{% load static %}
 {% block content %}
-    {% for post in posts %}
-        <h1>{{ post.title }}</h1>
-        <p>by {{ post.author }} on {{ post.date_posted}} </p>
-        <p>{{ post.content }}</p>
-    {% endfor %}
+        <div style="background-image: url('{% static 'dashboard/newCss/images.jpg' %}'); background-size: cover; height: 100%; top: 0;">
+
+			<center>
+				<iframe src="{% static 'dashboard/slider.html' %}" style="width: 1000px; height: 500px;"></iframe>
+			</center>
+
+			<div class="divs">
+		<div class="skewed">
+			<div class="image">
+					<div><img src="{% static 'dashboard/newCss/sk/201020.jpg' %}" alt="img"></div>
+				</div>
+			<div class="text">
+				<h3>برنامه ریزی کنکور</h3>
+				<p>مشاوره و برنامه ریزی منظم برای موفقیت در کنکور</p>
+				<small>قیمت دوره:2000000 تومان</small>
+				<a class="a1" href="#" dir="ltr">اطلاعات بیشتر &rarr;</a>
+			</div>
+		</div>
+
+		<div class="skewed">
+			<div class="image">
+					<div><img src="{% static 'dashboard/newCss/sk/wp3432616.jpg' %}" alt="img"></div>
+				</div>
+			<div class="text">
+				<h3>دوره های تندخوانی</h3>
+				<p>آموزش انواع متدهای تندخوانی با بازده بالا و صرفه جویی در زمان</p>
+				<small>قیمت دوره:1000000 تومان</small>
+				<a class="a1" href="#" dir="ltr">اطلاعات بیشتر &rarr;</a>
+			</div>
+		</div>
+				<div class="skewed">
+			<div class="image">
+					<div><img src="{% static 'dashboard/newCss/sk/wp3432620.webp' %}" alt="img"></div>
+				</div>
+			<div class="text">
+				<h3>برنامه ریزی کنکور</h3>
+				<p>مشاوره و برنامه ریزی منظم برای موفقیت در کنکور</p>
+				<small>قیمت دوره:2000000 تومان</small>
+				<a class="a1" href="#" dir="ltr">اطلاعات بیشتر &rarr;</a>
+			</div>
+		</div>
+	</div>
+		</div>
+	</div>
 {% endblock %}
