@@ -14,6 +14,7 @@
 	
 	<link rel="stylesheet" href="newCss/sk/page1.css">
 	<link rel="stylesheet" href="newCss/footer/footer.css">
+	<link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
 	<script src="newCss/slider/slider.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 	<link rel="stylesheet" href="newCss/slider/slider2.css">
@@ -160,11 +161,13 @@
             <svg width="118" height="46" alt="CoreUI Logo">
               <use xlink:href="assets/brand/coreui.svg#full"></use>
             </svg></a>
-          <ul class="header-nav d-none d-md-flex">
+          <!--<ul class="header-nav d-none d-md-flex">
             <li class="nav-item"><a class="nav-link" href="registerMomtaz.html" style="color: white;">ورود</a></li>
             <li class="nav-item"><a class="nav-link" href="login.html" style="color: white;">ثبت نام</a></li>
             
-          </ul>
+          </ul>-->
+			<a href="" class="btnNav">ورود</a>
+			<a href="" class="btnNav" style="margin-right: 2px;">ثبت نام</a>
           <ul class="header-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#">
                 <svg class="icon icon-lg">
@@ -228,16 +231,24 @@
         <div class="header-divider"></div>
         <div class="container-fluid">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb my-0 ms-2">
+            <!--<ol class="breadcrumb my-0 ms-2">
               <li class="breadcrumb-item">
-                <!-- if breadcrumb is single--><span>صفحه اصلی</span>
+                <span>صفحه اصلی</span>
               </li>
               <li class="breadcrumb-item active"><span>داشبورد</span></li>
-            </ol>
+            </ol>-->
           </nav>
+			<div class="divSearch2">
+			<input class="navInputText" type="text" placeholder="جست و جو...">
+			<button class="searchIcon"><i class="fa fa-search"></i></button>
+			</div>
         </div>
-      </header>
-		<div style="background-image: url('newCss/images.jpg'); background-size: cover; height: 100%; top: 0;">
+			
+		</header>
+			
+			
+			
+		<div id="divShowHome">
 			
 			<center>
 				<iframe src="slider.html" style="width: 1000px; height: 500px;"></iframe>
