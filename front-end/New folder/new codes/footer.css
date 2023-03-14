@@ -38,11 +38,12 @@
 			margin-bottom: 10px;
 		}
 		.ftr-col ul li a{
+			margin-left: -30px;
 			font-size: 16px;
 			text-transform: capitalize;
 			color: white;
 			text-decoration: none;
-			font-weight: 300;
+			font-weight: 300px;
 			display: block;
 			transition: all 0.3s ease;
 		}

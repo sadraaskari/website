@@ -153,6 +153,7 @@
 			transition: 0.4s;
 		}
 		.skewedleft:hover{
+			
 			transform: scale(1.1);
 			transition: 0.4s;
 		}
@@ -207,6 +208,35 @@
             border-color: white;
             
         }
+.float-start i:hover{
+	opacity: 75%;
+	transform: translateY(-2px);
+	transition: 0.5s;
+}
 .aMenu:hover{
     opacity: 30%;
+}
+.ps{
+	margin-right: 10px;
+	padding-top: 5px;
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+}
+.bg-img{
+	background-size: contain;
+	width: 50%;
+}
+.profile{
+	margin-top: -6px;
+	margin-right: 2px;
+	background-image: url("201020.jpg");
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.profile:hover{
+	transform: scale(0.9);
+	opacity: 80%;
+	transform: translateY(-2px);
+	transition: 0.5s;
 }

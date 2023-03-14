@@ -6,7 +6,13 @@
     border-radius: 30px;
     padding: 10px;
     }
-
+.searchbar a i {
+                        margin-right: 4px;
+                    }
+                     .searchbar:hover a i{
+                        margin-right: -2px;
+                        transition: 0.5s;
+                    }
     .search_input{
     color: white;
     border: 0;
