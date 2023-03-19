@@ -38,7 +38,9 @@ color: #bcd0f7;
     border: 0;
     margin-bottom: 1rem;
 }
+.form-group{ text-align: right;}
 .form-control {
+	text-align: right;
     border: 1px solid #596280;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
