@@ -8,7 +8,18 @@
                 transform: translateX(0);
             }
         }
+@font-face {
+    font-family: myFirstFont;
+    src:url("shabnam-font-v5.0.1/Farsi-Digits/Shabnam-FD.ttf");
+	src:url("shabnam-font-v5.0.1/Farsi-Digits/Shabnam-Bold-FD.ttf");
+	src:url("shabnam-font-v5.0.1/Farsi-Digits/Shabnam-Thin-FD.ttf");
+	src:url("shabnam-font-v5.0.1/Farsi-Digits/Shabnam-Medium-FD.ttf");
+	src:url("shabnam-font-v5.0.1/Farsi-Digits/Shabnam-Light-FD.ttf");
+	
+}
+
 		body{
+			font-family: myFirstFont;
 			background-image:url("pictures/black-background-04-coolbackgrounds.png");
 		}
 		.divNav{
@@ -237,6 +248,6 @@
 .profile:hover{
 	transform: scale(0.9);
 	opacity: 80%;
-	transform: translateY(-2px);
+	transform: translateY(-1px);
 	transition: 0.5s;
 }

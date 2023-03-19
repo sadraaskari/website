@@ -47,9 +47,46 @@
             border: none;
             display: inline-block;
         }*/
+		.collapse{
+			justify-content: center;
+		}
         .nav-new{
                 margin-left: 20px;
             }
+		.dropdown1{
+			background-color: #202020;
+			width: 200px;
+			float: left;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			position: absolute;
+			z-index: 1;
+			display: none;
+		}
+		.dropdown1 ul li{
+			float: left;
+			text-align: left;
+		}
+		.dropdown1 ul li a{
+			padding: 10px 0px 10px 0px;
+			color:white;
+			display: inline-block;
+			text-align: left;
+			text-decoration: none;
+			float: left;
+		}
+		.dropdown1 ul li a i{
+			margin-top: 2px;
+			margin-right: 5px;
+		}
+		.dropdown1 ul li:hover{
+			transform: scale(0.9);
+			opacity: 80%;
+			transition: 0.5s;
+		}
+		.float-start button:hover{
+			background-color: hsla(0,0%,100%,0.00);
+			color: yellow;
+		}
 		@media only screen and(max-width: 600px){
 			.carousel-item img{
 			height: 50vh;
@@ -59,12 +96,24 @@
             }
 		}
 	</style>
+	<script type="text/javascript">
+		function blockDropDown(){
+			if(document.getElementById("drop1").value == 1){
+			    document.getElementById("drop1").style.display = "block";
+				document.getElementById("drop1").value = 0;
+			   }else{
+				   document.getElementById("drop1").style.display = "none";
+					document.getElementById("drop1").value = 1;
+			   }
+		}
+	</script>
 	<link rel="stylesheet" type="text/css" href="search.css">
 	<link rel="stylesheet" type="text/css" href="page1.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="responsive.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MomtazWeb</title>
+	<title>سایت مشاوره</title>
 	<!--for bootstrap-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
@@ -99,10 +148,22 @@
       </div>
     </div>
                 <div class="float-start text-white p-2 d-flex">
-					<i class="fas fa-bars" style="margin-top: 5px; font-size: 25px; margin-left: 5px;"></i>
-                    <a href="login/login.html" style="text-decoration: none; height: 100%;"><button type="button" class="btn btn-outline-warning" style="font-size: 15px;">ورود</button></a>
-                    <button type="button" class="btn btn-outline-warning" style="font-size: 15px;">ثبت نام</button>
-					<div class="profile"></div>
+                    <a href="login/login.html" style="text-decoration: none; height: 100%;"><button type="button" class="btn btn-warning" style="font-size: 15px;">ورود</button></a>
+					<a href="login/register.html" style="text-decoration: none; height: 100%;"><button type="button" class="btn btn-warning" style="font-size: 15px;">ثبت نام</button></a>
+					<div   style=" position: relative; display: inline-block;" dir="ltr">
+						<div class="profile" onClick="blockDropDown();">
+						
+					</div>
+					<div id="drop1" class="dropdown1" dir="rtl" value="1">
+						<p style="text-align: center; color: white; padding-top: 3px;
+								  margin-bottom: -2px;">سعید ممتاز</p><hr>
+						<ul>
+							<li><a href="">profile<i class="fas fa-user"></i></a></li>
+                            <li><a href="sideBar/index.html">admin page<i class="fas fa-bars"></i></a></li>
+							<li><a href="">logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
+						</ul>
+						</div>
+					</div>
                 </div>
                 <!--<div class="divImage"><img src="" class="img-fluid" alt="..."></div>-->
 </nav>
@@ -151,19 +212,19 @@
 	<p class="ps mb-2 fs-3">دوره های جدید</p><hr>
 	<center><div class="bg-img"><img src="momtazgroup.jpg" style="width: 75%;"></img></div></center>
 <div class="divs">
-		<div class="skewed" dir="ltr">
+		<div class="skewed">
+			<div class="image">
+					<div><img src="201020.jpg" alt="img"></div>
+				</div>
 			<div class="text">
 				<h2>دوره های مشاوره</h2>
 				<p>این دوره ها مخصوص دانش آموزان پایه دوازدهم و کنکوری میباشد که شامل مدیریت زمان و تست زنی با برنامه است</p>
 				<small>قیمت دوره:2000000 تومان</small>
-				<a  class="a1" href="#">اطلاعات بیشتر&rarr;</a>
+				<a  class="a1" href="#">&rarr;اطلاعات بیشتر</a>
 			</div>
-			<div class="image">
-					<div><img src="201020.jpg" alt="img"></div>
-				</div>
 		</div>
 		
-		<div class="skewed">
+		<div class="skewed" >
 			<div class="image">
 					<div><img src="wp3432616.jpg" alt="img"></div>
 				</div>
@@ -194,7 +255,7 @@
 						<li><a href="#">تلفن</a></li>
 						<li><a href="#">آدرس</a></li>
 						<li><a href="#">تلگرام</a></li>
-						<li><a href="#">آدرس خونه ممتاز</a></li>
+						<li><a href="#">موسسه</a></li>
 					</ul>
 				</div>
 				<div class="ftr-col">
