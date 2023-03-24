@@ -181,8 +181,8 @@ margin-left: 5px;
   margin-top: 70px;
   margin-right: 250px;
   padding: 15px;
-  background: url(background.jpg)no-repeat;
-  background-size: cover;
+  background: url(background.jpg);
+  background-size: repeat;
   height: 100vh;
   transition: 0.3s;
 }
@@ -216,4 +216,42 @@ margin-left: 5px;
   padding: 15px;
   margin-bottom: 10px;
   font-size: 14px;
+}
+.card{
+    border-radius: 20px;
+}
+.main-container header{
+					background-color: white;
+					padding: 20px;
+					width: 100%;
+	margin-bottom: 10px;
+	text-align: center;
+				}
+				.main-container header nav ul{
+					display: flex;
+				}
+				.main-container header nav ul li{
+					font-size: 20px;
+					margin-right: 25px;
+				}
+				.main-container header nav ul li:active{
+					background-color: #3B3B3B;
+					color: white;
+					border: none;
+					padding: 3px;
+					border-radius: 15px;
+				}
+				.actForNav{
+					background-color: #3B3B3B;
+					color: white;
+					border: none;
+					padding: 3px;
+					border-radius: 15px;
+				}
+.stripe tbody tr td img{
+	width: 50px;
+	height: 50px;
+}
+.d1, .d2 , .d3 , .d4{
+	background-color: transparent;
 }

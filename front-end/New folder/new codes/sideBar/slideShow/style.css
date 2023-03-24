@@ -181,8 +181,8 @@ margin-left: 5px;
   margin-top: 70px;
   margin-right: 250px;
   padding: 15px;
-  background: url(background.jpg) repeat;
-  background-size: cover;
+  background: url(background.jpg);
+  background-size: repeat;
   height: 100vh;
   transition: 0.3s;
 }
