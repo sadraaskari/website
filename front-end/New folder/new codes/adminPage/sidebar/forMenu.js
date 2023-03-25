@@ -1,6 +1,5 @@
-function showDiv(d  , numOfDivs){
-		alert(d);
-		for(var i = 1 ; i<= numOfDivs ; i++){
+function showDiv(d){
+		for(var i = 1 ; i<= 4 ; i++){
 			var divBlocked = document.getElementById("d" + i);
 			if(divBlocked.style.display == "none"){
 				/*nothing*/
@@ -8,11 +7,19 @@ function showDiv(d  , numOfDivs){
                    divBlocked.style.display = "none";
                }
 		}
-		alert("fdkdfjdf");
+		
 		var divOnClicked = document.getElementById("d" + d);
 		divOnClicked.style.display = "block";
 		
 	}
-    function test(){
+function test(){
         alert("hello guys!!");
     }
+function trash(numOfRow){
+	var divRow = document.getElementById("tr" + numOfRow);
+	//divRow.style.display = "none";
+	let t = confirm("آیا میخواهید ردیف شماره"+numOfRow+"را حذف کنید؟");
+	if(t == true){
+		divRow.style.display = "none";
+	}
+}

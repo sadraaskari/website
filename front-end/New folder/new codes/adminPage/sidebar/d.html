@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+	<title>students</title>
+	<meta charset="utf-8">
+		<title>Sidebar Dashboard Template With Sub Menu</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="forMenu.js"></script>
+        <!--for table-->
+	<!--Replace with your tailwind.css once created-->
+
+
+	<!--Regular Datatables CSS-->
+
+	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+
+
+    <!--table-->
+    <link rel="stylesheet" type="text/css" href="table.css">
+	<script type="text/javascript">
+		$(function(){
+			$('#body1').load('sidebar.html');
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+	<div id="body1">
+	</div>
+	<div class="main-container">
+        <div class="card" style="text-align: center;">
+            <header>
+					<nav>
+						<ul>
+							<li onClick="showDiv(1);">نمایش دوره ها</li>
+							<li onClick="showDiv(2);">دوره های تایید شده</li>
+							<li onClick="showDiv(3);">دوره های در حال بررسی</li>
+							<li onClick="showDiv(4);">ساخت دوره</li>
+						</ul>
+					</nav>
+				</header>
+        </div>
+		<div class="card">
+					<div id="d1" style="">
+						<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em; font-size: 20px;">
+				<thead>
+					<tr>
+						<th data-priority="1">عکس</th>
+						<th data-priority="2">عنوان </th>
+						<th data-priority="3">مدرس </th>
+						<th data-priority="4">دسته</th>
+						<th data-priority="5">قیمت</th>
+						<th data-priority="6">جزیات</th>
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="tr1">
+						<td><img src="1.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-trash" onClick="trash(1);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr id="tr2">
+						<td><img src="background.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-trash" onClick="trash(2);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+                    <tr id="tr3">
+						<td><img src="momo.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-trash" onClick="trash(3);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+<tr id="tr4">
+						<td><img src="1.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-trash" onClick="trash(4);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr id="tr5">
+						<td><img src="background.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+					</div>
+					<div id="d2" style="display: none;">
+						<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em; font-size: 20px;">
+				<thead>
+					<tr>
+						<th data-priority="1">عکس</th>
+						<th data-priority="2">عنوان </th>
+						<th data-priority="3">مدرس </th>
+						<th data-priority="4">دسته</th>
+						<th data-priority="5">قیمت</th>
+						<th data-priority="6">جزیات</th>
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img src="1.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td><img src="background.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+
+                    <tr>
+						<td><img src="momo.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+<tr>
+						<td><img src="1.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td><img src="background.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+					</div>
+<div id="d3" style=" display: none;">
+						<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em; font-size: 20px;">
+				<thead>
+					<tr>
+						<th data-priority="1">عکس</th>
+						<th data-priority="2">عنوان </th>
+						<th data-priority="3">مدرس </th>
+						<th data-priority="4">دسته</th>
+						<th data-priority="5">قیمت</th>
+						<th data-priority="6">جزیات</th>
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img src="1.jpg"></img></td>
+						<td>fdldffdl</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td><img src="background.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+
+                    <tr>
+						<td><img src="momo.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+<tr>
+						<td><img src="1.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td><img src="background.jpg"></img></td>
+						<td>کنکور</td>
+						<td>ممتاز</td>
+						<td>مشاوره آنلاین</td>
+						<td>1000000</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+				</div>
+<div id="d4" style="display: none;">
+	<div class="input1">
+		<input type="text" placeholder="عنوان">
+		<hr>
+        <p style="display: inline; font-size: 20px;">مدرس:</p>
+		<select style=" font-size: 20px;">
+			<option disabled>مدرس</option>
+			<option>ممتاز</option>
+			<option>عزیز مرادی</option>
+			<option>یامینی</option>
+		</select><hr>
+        <p style="display: inline; font-size: 20px;">نوع دوره:</p>
+        
+		<select style=" font-size: 20px;">
+			<option disabled>نوع دوره</option>
+			<option>آنلاین</option>
+			<option> حضوری</option>
+		</select><hr>
+		<lable>عکس:</lable>
+		<input type="file"><hr>
+		<textarea placeholder="توضیحات"></textarea>
+		<hr>
+		<input type="submit" value="ثبت">
+	</div>
+				</div>
+			</div>
+	</div>
+</div>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$(".sidebar-btn").click(function(){
+				$(".wrapper").toggleClass("collapse");
+			});
+		});
+		</script>
+        <!--for table-->
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			var table = $('#example').DataTable({
+					responsive: true
+				})
+				.columns.adjust()
+				.responsive.recalc();
+		});
+	</script>
+</body>
+</html>

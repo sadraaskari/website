@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+	<title>students</title>
+	<meta charset="utf-8">
+		<title>Sidebar Dashboard Template With Sub Menu</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <!--for table-->
+	<!--Replace with your tailwind.css once created-->
+
+
+	<!--Regular Datatables CSS-->
+
+	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+
+
+    <!--table-->
+    <link rel="stylesheet" type="text/css" href="table.css">
+	<script type="text/javascript">
+		$(function(){
+			$('#body1').load('sidebar.html');
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+	<div id="body1">
+	</div>
+	<div class="main-container">
+		<div class="card">
+					<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+				<thead>
+					<tr>
+						<th data-priority="1">نام</th>
+						<th data-priority="2">نام خانوداگی</th>
+						<th data-priority="3">شماره تماس</th>
+						<th data-priority="4">پایه</th>
+						<th data-priority="5">رشته</th>
+						<th data-priority="6">سایر</th>
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr>
+                    <tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-bars"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td style="text-align: center;"><i class="fas fa-bars"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+				</div>
+	</div>
+</div>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$(".sidebar-btn").click(function(){
+				$(".wrapper").toggleClass("collapse");
+			});
+		});
+		</script>
+        <!--for table-->
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			var table = $('#example').DataTable({
+					responsive: true
+				})
+				.columns.adjust()
+				.responsive.recalc();
+		});
+	</script>
+</body>
+</html>
