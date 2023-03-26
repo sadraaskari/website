@@ -59,16 +59,17 @@
 			float: left;
 			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 			position: absolute;
-			z-index: 1;
+			z-index: 5;
 			display: none;
 		}
 		.dropdown1 ul li{
-			float: left;
-			text-align: left;
+			/*float: left;
+			text-align: left;*/
 		}
 		.dropdown1 ul li a{
 			padding: 10px 0px 10px 0px;
 			color:white;
+			position: inherit;
 			display: inline-block;
 			text-align: left;
 			text-decoration: none;
@@ -78,9 +79,11 @@
 			margin-top: 2px;
 			margin-right: 5px;
 		}
-		.dropdown1 ul li:hover{
-			transform: scale(0.9);
-			opacity: 80%;
+		.dropdown1 ul li a:hover{
+			
+			color: yellow;
+			transform: scale(1.2);
+			
 			transition: 0.5s;
 		}
 		.float-start button:hover{
@@ -158,11 +161,12 @@
 						<p style="text-align: center; color: white; padding-top: 3px;
 								  margin-bottom: -2px;">سعید ممتاز</p><hr>
 						<ul>
-							<li><a href="">profile<i class="fas fa-user"></i></a></li>
-                            <li><a href="sideBar/index.html">admin page<i class="fas fa-bars"></i></a></li>
+							<li><a href="adminPage/sidebar/profileShow.html">profile<i class="fas fa-user"></i></a></li>
+                            <li><a href="adminPage/sideBar/index.html">admin page<i class="fas fa-bars"></i></a></li>
 							<li><a href="">logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
 						</ul>
 						</div>
+						
 					</div>
                 </div>
                 <!--<div class="divImage"><img src="" class="img-fluid" alt="..."></div>-->
