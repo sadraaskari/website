@@ -23,3 +23,11 @@ function trash(numOfRow){
 		divRow.style.display = "none";
 	}
 }
+function add(numOfRow){
+	var divRow = document.getElementById("tr" + numOfRow);
+	//divRow.style.display = "none";
+	
+		   divRow.style.backgroundColor = "#1F65E0";
+	divRow.style.color = "white";
+	   
+}
