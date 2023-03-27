@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html dir="rtl">
 <head>
-	<title>students</title>
+	<title>ماژول ها</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 		<title>Sidebar Dashboard Template With Sub Menu</title>
 		<link rel="stylesheet" href="style.css">
@@ -35,20 +36,29 @@
 	</div>
 	<div class="main-container">
 		<div class="card">
-			<p class="titleForCard">انتخاب لوگو</p>
-			<lable for="logo" class="l">لوگو:</lable><input type="file" id="logo">
+			<p class="titleForCard">لوگو:</p>
+			<lable class="l">انتخاب لوگوی جدید:</lable><input type="file"><input type="submit" value="اعمال تغییر">
+			<hr>
+			<lable class="l">لوگوی حاضر:</lable>
+			<img src="momo.jpg" class="cardImage"></img>
 		</div>
 		<div class="card">
-			<p class="titleForCard">ماژول های صدر سایت</p>
+			<p class="titleForCard">ماژول های هدر:</p>
+			<iframe src="moduleForHeader.html" style="height: 70vh; width: 100%;"></iframe>
 		</div>
-		<div class="card">
-			<p class="titleForCard">عکس وسط سایت</p>
-		</div>
-		<div class="card">
-			<p class="titleForCard">محتوای فوتر</p>
+	<div class="card">
+			<p class="titleForCard">عکس وسط صفحه:</p>
+			<lable class="l">انتخاب عکس جدید:</lable><input type="file"><input type="submit" value="اعمال تغییر">
+			<hr>
+			<lable class="l">عکس حاضر:</lable>
+			<img src="momtazgroup.jpg" class="cardImage"></img>
 		</div>
 	</div>
+
+	</div>
 </div>
+	</div>
+	
 <script type="text/javascript">
 		$(document).ready(function(){
 			$(".sidebar-btn").click(function(){

@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>card slider</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+	<section>
+		<div class="swiper mySwiper container">
+			<div class="swiper-wrapper content">
+				<div class="swiper-slide card">
+					<div class="card-content">
+						<div class="image">
+							<img src="1.jpg" alt="girl">
+						</div>
+						<div class="social-media">
+							<i class="fas fa-facebook"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
+						<div class="name-profession">
+							<span class="name">one person</span>
+							<span class="profession">developer</span>
+						</div>
+						<div class="button">
+							<button class="btn1">About ME</button>
+							<button class="btn2">About ME</button>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide card">
+					<div class="card-content">
+						<div class="image">
+							<img src="yamin.jpg" alt="girl">
+						</div>
+						<div class="social-media">
+							<i class="fas fa-facebook"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
+						<div class="name-profession">
+							<span class="name">یامینی</span>
+							<span class="profession">مشاور</span>
+						</div>
+						<div class="button">
+							<button class="btn1">درباره</button>
+							<button class="btn2">دوره</button>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide card">
+					<div class="card-content">
+						<div class="image">
+							<img src="1.jpg" alt="girl">
+						</div>
+						<div class="social-media">
+							<i class="fas fa-facebook"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
+						<div class="name-profession">
+							<span class="name">عزیز مرادی</span>
+							<span class="profession">مشاور</span>
+						</div>
+						<div class="button">
+							<button class="btn1">درباره</button>
+							<button class="btn2">دوره</button>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide card">
+					<div class="card-content">
+						<div class="image">
+							<img src="varshoi.png" alt="girl">
+						</div>
+						<div class="social-media">
+							<i class="fas fa-facebook"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
+						<div class="name-profession">
+							<span class="name">ورشوی</span>
+							<span class="profession">مشاور</span>
+						</div>
+						<div class="button">
+							<button class="btn1">درباره</button>
+							<button class="btn2">دوره</button>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide card">
+					<div class="card-content">
+						<div class="image">
+							<img src="1.jpg" alt="girl">
+						</div>
+						<div class="social-media">
+							<i class="fas fa-facebook"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
+						<div class="name-profession">
+							<span class="name">one person</span>
+							<span class="profession">developer</span>
+						</div>
+						<div class="button">
+							<button class="btn1">About ME</button>
+							<button class="btn2">About ME</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <div class="swiper-pagination"></div>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>

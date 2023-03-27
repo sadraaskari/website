@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html dir="rtl">
 <head>
-	<title>students</title>
+	<title>نقش ها</title>
 	<meta charset="utf-8">
-		<title>Sidebar Dashboard Template With Sub Menu</title>
 		<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="dropDown2.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+		<link rel="stylesheet" href="dropDown.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
         <!--for table-->
 	<!--Replace with your tailwind.css once created-->
@@ -34,19 +35,71 @@
 	<div id="body1">
 	</div>
 	<div class="main-container">
-		<div class="card">
-			<p class="titleForCard">انتخاب لوگو</p>
-			<lable for="logo" class="l">لوگو:</lable><input type="file" id="logo">
+		
+			
+			<iframe src="accounting.html" style="width: 100%; height: 70vh; background-color: transparent;"></iframe>
+		<div class="card" style="font-size: 20px;">
+			
+			<div class="dr">
+				<!--<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">مدرسه</a>
+    <div class="dropdown-content">
+      <a>سلطانی 3</a>
+	  <a>فرزانگان</a>
+	  <a>علامه حلی</a>		
+    </div>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">رشته</a>
+    <div class="dropdown-content">
+      <a href="#">ریاضی</a>
+      <a href="#">تجربی</a>
+      <a href="#">انسانی</a>
+    </div>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">پایه</a>
+    <div class="dropdown-content">
+      <a href="#">10</a>
+      <a href="#">11</a>
+      <a href="#">12</a>
+    </div>
+  </li>
+</ul>-->
+				<nav role="navigation" class="primary-navigation">
+  <ul>
+    
+    <li><a href="#">مدرسه &dtrif;</a>
+      <ul class="dropdown">
+        <li><a href="#">سلطانی3</a></li>
+        <li><a href="#">علامه حلی</a></li>
+        <li><a href="#">فرزانگان</a></li>
+        <li><a href="#">زبدگان</a></li>
+      </ul>
+    </li>
+	  <li><a href="#">رشته &dtrif;</a>
+      <ul class="dropdown">
+        <li><a href="#">ریاضی-فیزیک</a></li>
+        <li><a href="#">تجربی</a></li>
+        <li><a href="#">انسانی</a></li>
+        
+      </ul>
+    </li>
+	  <li><a href="#">پایه &dtrif;</a>
+      <ul class="dropdown">
+        <li><a href="#">12</a></li>
+        <li><a href="#">11</a></li>
+        <li><a href="#">10</a></li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+			</div>
+			
+			<input type="submit" value="ثبت">
 		</div>
-		<div class="card">
-			<p class="titleForCard">ماژول های صدر سایت</p>
-		</div>
-		<div class="card">
-			<p class="titleForCard">عکس وسط سایت</p>
-		</div>
-		<div class="card">
-			<p class="titleForCard">محتوای فوتر</p>
-		</div>
+		
 	</div>
 </div>
 <script type="text/javascript">

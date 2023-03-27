@@ -197,9 +197,9 @@ margin-left: 5px;
   margin-top: 70px;
   margin-right: 250px;
   padding: 15px;
-  background: url(background.jpg);
+  background: url(background.jpg) repeat;
   background-size: cover;
-  height: 100vh;
+  /*height: 100vh;*/
   transition: 0.3s;
 }
 
@@ -290,18 +290,20 @@ margin-left: 5px;
     height: 30vh;
 }
 .card input[type = "submit"]{
-    background-color: cornflowerblue;
+   /* background-color: cornflowerblue;
     color: white;
     font-size: 20px;
     width: 25%;
     padding: 5px;
     margin: 5px;
-    border-radius: 20px;    
+    border-radius: 20px; */
+	background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%); border-radius: .5rem; box-sizing: border-box; color: #FFFFFF; display: inline; font-size: 16px; justify-content: center; padding: 5px 10px; text-decoration: none; width: 20%; border: 0; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; 
 }
 .card input[type = "submit"]:hover{
-    transform: scale(0.9);
+    /*transform: scale(0.9);
     opacity: 70%;
-    transition: 0.5s;
+    transition: 0.5s;*/
+	background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%); 
 }
  .wrapper .underHeader{
 	 width: (100% - 250px);
@@ -325,3 +327,38 @@ margin-right: 30px;
   text-transform: uppercase;
   font-weight: 900;
 }
+.card .titleForCard{
+	font-size: 30px;
+	color: cornflowerblue;
+	padding: 3px;
+	border-bottom: 2px solid cornflowerblue;
+}
+.card .l{
+	font-size: 20px;
+	color: cornflowerblue;
+	padding: 3px;
+}
+.card .cardImage{
+	justify-content: flex-start;
+	width: auto;
+	height: auto;
+	max-width: 200px;
+	max-height: 100px;
+	display: inline;
+	border: 1px solid #202020;
+	border-radius: 15px;
+}
+.card hr{
+	margin-bottom: 20px;
+}
+@media  screen and(max-width: 665px){
+	.card input[type = "submit"]{
+    font-size: 10px;
+    width: 20%;
+		background-color: orange;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 15px;    
+}
+}
+/*<!-- HTML !--> <button class="button-43" role="button">Button 43</button>  .button-43 { background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%); border-radius: .5rem; box-sizing: border-box; color: #FFFFFF; display: flex; font-size: 16px; justify-content: center; padding: 1rem 1.75rem; text-decoration: none; width: 100%; border: 0; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; } .button-43:hover { background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%); } @media (min-width: 768px) { .button-43 { padding: 1rem 2rem; } }*/
