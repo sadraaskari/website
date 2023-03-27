@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <!--<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">-->
+	<!--<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">-->
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+	<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+				<thead>
+					<tr>
+						<th data-priority="1">نام</th>
+						<th data-priority="2">نام خانوداگی</th>
+						<th data-priority="3">شماره تماس</th>
+						<th data-priority="4">پایه</th>
+						<th data-priority="5">رشته</th>
+						<th data-priority="6">سایر</th>
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+                    <tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td style=""><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+                    <tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td style=""><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+                    <tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td style=""><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+                    <tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr><tr>
+						<td>سعید</td>
+						<td>ممتاز</td>
+						<td>23029494</td>
+						<td>12</td>
+						<td>انسانی</td>
+						<td style=""><i class="fas fa-trash" onClick="trash(5);"></i> <i class="fas fa-pen"></i> <i class="fas fa-eye"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script>$(document).ready(function() {
+
+			var table = $('#example').DataTable({
+					responsive: true
+				})
+				.columns.adjust()
+				.responsive.recalc();
+		});
+	</script>
+</body>
+</html>

@@ -197,14 +197,13 @@ margin-left: 5px;
   margin-top: 70px;
   margin-right: 250px;
   padding: 15px;
-  background: url(background.jpg) repeat;
-  background-size: cover;
-  /*height: 100vh;*/
+  background: #B5B4BD;
+min-height: 100vh;
   transition: 0.3s;
 }
 
 .wrapper.collapse .sidebar{
-  width: 70px;
+  width: 80px;
 }
 
 .wrapper.collapse .sidebar .profile img,
@@ -331,6 +330,7 @@ margin-right: 30px;
 	font-size: 30px;
 	color: cornflowerblue;
 	padding: 3px;
+	font-style: bold;
 	border-bottom: 2px solid cornflowerblue;
 }
 .card .l{

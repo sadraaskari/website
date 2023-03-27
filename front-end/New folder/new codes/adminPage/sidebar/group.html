@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html dir="rtl">
 <head>
-	<title>ماژول ها</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>گروه</title>
 	<meta charset="utf-8">
-		<title>Sidebar Dashboard Template With Sub Menu</title>
 		<link rel="stylesheet" href="style.css">
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">-->
-	<script src="https://kit.fontawesome.com/ea51452e57.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/ea51452e57.js" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
         <!--for table-->
 	<!--Replace with your tailwind.css once created-->
@@ -30,36 +28,71 @@
 			$('#body1').load('sidebar.html');
 		});
 	</script>
+	
+	
 </head>
 <body>
 	<div class="wrapper">
 	<div id="body1">
 	</div>
 	<div class="main-container">
+		
+			
+			<iframe src="groupIframe.html" style="width: 100%; height: 70vh; background-color: transparent;"></iframe>
 		<div class="card">
-			<h2 class="titleForCard">لوگو:</h2>
-			<lable class="l">انتخاب لوگوی جدید:</lable><input type="file"><input type="submit" value="اعمال تغییر">
-			<hr>
-			<lable class="l">لوگوی حاضر:</lable>
-			<img src="momo.jpg" class="cardImage"></img>
-		</div>
-		<div class="card">
-			<h2 class="titleForCard">ماژول های هدر:</h2>
-			<iframe src="moduleForHeader.html" style="height: 70vh; width: 100%;"></iframe>
-		</div>
-	<div class="card">
-			<p class="titleForCard">عکس وسط صفحه:</p>
-			<lable class="l">انتخاب عکس جدید:</lable><input type="file"><input type="submit" value="اعمال تغییر">
-			<hr>
-			<lable class="l">عکس حاضر:</lable>
-			<img src="momtazgroup.jpg" class="cardImage"></img>
-		</div>
-	</div>
+			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+				<thead>
+					<tr>
+						<th data-priority="1">نام گروه</th>
+						<th data-priority="2">مدرس/مشاور/مدیر</th>
+						<th data-priority="3">تعداد</th>
+						<th data-priority="4">اعضا</th>
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>سلطانی 3</td>
+						<td>ممتاز</td>
+						<td>160</td>
+						<td><i class="fas fa-bars" onClick="trash(5);"></i></td>
+					</tr>
 
+					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+					<tr>
+						<td>سلطانی 3</td>
+						<td>ممتاز</td>
+						<td>160</td>
+						<td><i class="fas fa-bars" onClick="trash(5);"></i></td>
+					</tr>
+                    <tr>
+						<td>سلطانی 3</td>
+						<td>ممتاز</td>
+						<td>160</td>
+						<td><i class="fas fa-bars" onClick="trash(5);"></i></td>
+					</tr>
+					<tr>
+						<td>سلطانی 3</td>
+						<td>ممتاز</td>
+						<td>160</td>
+						<td><i class="fas fa-bars" onClick="trash(5);"></i></td>
+					</tr>
+					</tr>
+		<tr>
+						<td>سلطانی 3</td>
+						<td>ممتاز</td>
+						<td>160</td>
+						<td><i class="fas fa-bars" onClick="trash(5);"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+		
+		
 	</div>
 </div>
-	</div>
-	
 <script type="text/javascript">
 		$(document).ready(function(){
 			$(".sidebar-btn").click(function(){

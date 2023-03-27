@@ -11,7 +11,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 		
 		
-		
+		<script type="text/javascript">
+		function ss(){
+			alert("hello");
+		}
+	</script>
 		
 		<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
 	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -24,26 +28,20 @@
 		<div class="container" >
 <div class="row gutters">
 	<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-		<div class="card h-100">
+		<div class="card h-75" style="">
 			<div class="card-body" >
 				<div class="account-settings" dir="rtl">
 					<form method="post">
 						<h5 class="fs-3 text-primary p-2"> سطح دسترسی</h5><hr>
-						<lable class="mb-2" for="admin">پنل ادمین:</lable><input id="admin" type="checkbox"><br>
-						<lable class="mb-2" for="admin">تیکت ها:</lable><input type="checkbox"><br>
-						<lable class="mb-2" for="admin">حساب داری:</lable><input type="checkbox"><br>
-						<lable class="mb-2" for="admin">سطح دسترسی:</lable><input type="checkbox"><br>
-						<lable class="mb-2" for="admin">کاربران:</lable><input type="checkbox"><br>
-						<lable class="mb-2" for="admin">همه:</lable><input type="checkbox"><br>
-						<lable class="mb-2" for="admin">لیست کاربران:</lable><input type="checkbox"><hr><br>
-						<button type="button" id="submit" name="submit" class="btn btn-primary" >اعمال تغییرات</button>
+						<lable class="mb-2" for="add">نام گروه:</lable><br><input id="add" type="text" placeholder="گروه مشاوره سلطانی" class="w-100"><lable class="mb-2" for="add"> نام مدرس یا مشاور</lable><br><input id="add" type="text" placeholder="ممتاز" class="w-100"><hr class="mb-3">
+						<button type="button" onClick="ss();" id="submit" name="submit" class="btn btn-primary" >اضافه</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-		<div class="card h-100">
+		<div class="card">
 			<div class="card-body" dir="rtl">
 				<div class="row gutters">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -54,9 +52,10 @@
 					<tr>
 						<th data-priority="1">نام</th>
 						<th data-priority="2">نام خانوداگی</th>
+						<th data-priority="3">شماره تماس</th>
 						<th data-priority="4">نقش</th>
 						<th data-priority="5">ایمیل</th>
-						<th data-priority="6">اضافه</th>
+						<th data-priority="6">سایر</th>
                        
 					</tr>
 				</thead>
@@ -64,9 +63,10 @@
 					<tr>
 						<td>سعید</td>
 						<td>ممتاز</td>
+						<td>23029494</td>
 						<td>ادمین</td>
 						<td>www.admin@gmail.com</td>
-						<td><i class="fas fa-plus" onClick="add(1);"></i></td>
+						<td><i class="fas fa-plus" onClick="trash(5);"></i> </td>
 					</tr>
 
 					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
@@ -74,31 +74,32 @@
 					<tr>
 						<td>سعید</td>
 						<td>ممتاز</td>
-					
+						<td>23029494</td>
 						<td>مشاور</td>
 						<td>www.admin@gmail.com</td>
-						<td><i class="fas fa-plus" onClick="add(2);"></i></td>
+						<td><i class="fas fa-plus" onClick="trash(5);"></i> </td>
 					</tr>
                     <tr>
 						<td>سعید</td>
 						<td>ممتاز</td>
-					
+						<td>23029494</td>
 						<td>مدرس</td>
 						<td>www.admin@gmail.com</td>
-						<td><i class="fas fa-plus" onClick="add(3);"></i></td>
+						<td><i class="fas fa-plus" onClick="trash(5);"></i> </td>
 					</tr><tr>
 						<td>سعید</td>
 						<td>ممتاز</td>
+						<td>23029494</td>
 						<td>دانش آموز</td>
 						<td>www.admin@gmail.com</td>
-						<td><i class="fas fa-plus" onClick="add(4);"></i></td>
-					</tr><tr id="tr5">
+						<td><i class="fas fa-plus" onClick="trash(5);"></i> </td>
+					</tr><tr>
 						<td>سعید</td>
 						<td>ممتاز</td>
-					
+						<td>23029494</td>
 						<td>مدیر</td>
 						<td>www.admin@gmail.com</td>
-						<td><i class="fas fa-plus" onClick="add(5);"></i></td>
+						<td><i class="fas fa-plus" onClick="trash(5);"></i> </td>
 					</tr>
 				</tbody>
 
