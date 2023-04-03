@@ -78,7 +78,6 @@ def reset_password_done(request):
     return render(request, 'users/reset_password_done.html')
 
 
-@login_required
 def profile(request):
     return render(request, 'users/profile.html')
 

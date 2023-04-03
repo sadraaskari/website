@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.conf.urls import static
+from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('courses/', include('courses.urls')),
-    path('', include('dashboard.urls')),
-    path('users/', include('users.urls')),
+    path('', include(('dashboard.urls', 'dashboard'), namespace='dashboard')),
+    path('users/', include(('users.urls', 'users'), namespace='users')),
     path('accounting/', include('accounting.urls')),
-]
+] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

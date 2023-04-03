@@ -1,0 +1,53 @@
+<html>
+{% load static %}
+<head>
+<meta charset="utf-8">
+<title>card slider</title>
+	<link rel="stylesheet" href="{% static 'dashboard/style.css'%}">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+	<section>
+		<div class="swiper mySwiper container">
+			<div class="swiper-wrapper content">
+				{% for user in users %}
+				{% if user.role.role != 'student' %}
+				<div class="swiper-slide card">
+					<div class="card-content">
+						<div class="image">
+							<img src="{{MEDIA_URL}}{{user.profile_picture}}" alt="girl">
+						</div>
+						<div class="social-media">
+							<i class="fas fa-facebook"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
+						<div class="name-profession">
+							<span class="name">{{user.user.username}}</span>
+							<span class="profession">{{user.role.role}}</span>
+						</div>
+						<div class="button">
+							<button class="btn1">About ME</button>
+							<button class="btn2">About ME</button>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		 <div class="swiper-pagination"></div>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>
