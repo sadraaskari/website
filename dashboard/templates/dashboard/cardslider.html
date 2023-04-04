@@ -12,7 +12,8 @@
 		<div class="swiper mySwiper container">
 			<div class="swiper-wrapper content">
 				{% for user in users %}
-				{% if user.role.role != 'student' %}
+				{% if user.user.is_staff %}
+
 				<div class="swiper-slide card">
 					<div class="card-content">
 						<div class="image">

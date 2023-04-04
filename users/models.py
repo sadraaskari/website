@@ -17,6 +17,7 @@ class UserProfile(models.Model):
     father_name = models.CharField(max_length=30, default='')
     phone = models.CharField(max_length=30, default='', unique=True)
     online_or_offline = models.IntegerField(default=0)
+    institute = models.CharField(max_length=30, default='')
     role = models.ForeignKey(Role, on_delete=models.CASCADE, default=4)
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)
     created_at = models.DateTimeField(default=timezone.now)
