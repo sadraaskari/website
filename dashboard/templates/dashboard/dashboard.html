@@ -153,15 +153,17 @@
       </div>
     </div>
                 <div class="float-start text-white p-2 d-flex">
+					{% if not user.is_authenticated %}
                     <a href="{% url 'users:users-login' %}" style="text-decoration: none; height: 100%;"><button type="button" class="btn btn-warning" style="font-size: 15px;">ورود</button></a>
 					<a href="{% url 'users:basic_registration' %}" style="text-decoration: none; height: 100%;"><button type="button" class="btn btn-warning" style="font-size: 15px;">ثبت نام</button></a>
+					{% else %}
 					<div   style=" position: relative; display: inline-block;" dir="ltr">
 						<div class="profile" onClick="blockDropDown();">
 
 					</div>
 					<div id="drop1" class="dropdown1" dir="rtl" value="1">
 						<p style="text-align: center; color: white; padding-top: 3px;
-								  margin-bottom: -2px;">سعید ممتاز</p><hr>
+								  margin-bottom: -2px;">{{user.username}}</p><hr>
 						<ul>
 							<li><a href="{% url 'users:users-profile' %}">profile<i class="fas fa-user"></i></a></li>
                             <li><a href="{% url 'users:users-profile' %}">admin page<i class="fas fa-bars"></i></a></li>
@@ -170,6 +172,7 @@
 						</div>
 
 					</div>
+					{% endif %}
                 </div>
                 <!--<div class="divImage"><img src="" class="img-fluid" alt="..."></div>-->
 </nav>

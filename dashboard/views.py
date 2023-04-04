@@ -8,10 +8,12 @@ from courses.models import Tutorial
 def home(request):
     slider_images = SliderImage.objects.all()
     tutorials = Tutorial.objects.all()
+    user = request.user
 
     context = {
         'slider_images': slider_images,
         'tutorials': tutorials,
+        'user': user,
     }
     return render(request, 'dashboard/dashboard.html', context)
 

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Role(models.Model):
     role = models.CharField(max_length=30, default='')
-    permission = models.JSONField(default=dict)
+    permission = models.JSONField(default=dict, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -30,7 +30,6 @@ class Student(models.Model):
     id = models.AutoField(primary_key=True)
     major = models.IntegerField(default=0)
     grade = models.IntegerField(default=0)
-    institute = models.CharField(max_length=30, default='')
     school = models.CharField(max_length=30, default='')
     mother_phone = models.CharField(max_length=30, default='')
     father_phone = models.CharField(max_length=30, default='')

@@ -2399,223 +2399,218 @@ model</ColNames>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="726" parent="529" name="institute">
+    <column id="726" parent="529" name="school">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="727" parent="529" name="school">
+    <column id="727" parent="529" name="father_phone">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="728" parent="529" name="father_phone">
+    <column id="728" parent="529" name="home_phone">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="729" parent="529" name="home_phone">
-      <DasType>varchar(30)|0s</DasType>
+    <column id="729" parent="529" name="support_id">
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="730" parent="529" name="support_id">
+    <column id="730" parent="529" name="counselor_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="731" parent="529" name="counselor_id">
+    <column id="731" parent="529" name="manager_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="732" parent="529" name="manager_id">
-      <DasType>integer|0s</DasType>
+    <column id="732" parent="529" name="support_name">
+      <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <column id="733" parent="529" name="support_name">
+    <column id="733" parent="529" name="counselor_name">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
-    <column id="734" parent="529" name="counselor_name">
+    <column id="734" parent="529" name="manager_name">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
-    <column id="735" parent="529" name="manager_name">
-      <DasType>varchar(30)|0s</DasType>
+    <column id="735" parent="529" name="created_at">
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>13</Position>
     </column>
-    <column id="736" parent="529" name="created_at">
-      <DasType>datetime|0s</DasType>
+    <column id="736" parent="529" name="student_id">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
-    <column id="737" parent="529" name="student_id">
-      <DasType>bigint|0s</DasType>
+    <column id="737" parent="529" name="mother_phone">
+      <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>15</Position>
     </column>
-    <column id="738" parent="529" name="mother_phone">
-      <DasType>varchar(30)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>16</Position>
-    </column>
-    <foreign-key id="739" parent="529">
+    <foreign-key id="738" parent="529">
       <ColNames>student_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>users_userprofile</RefTableName>
     </foreign-key>
-    <index id="740" parent="529" name="sqlite_autoindex_users_student_1">
+    <index id="739" parent="529" name="sqlite_autoindex_users_student_1">
       <ColNames>student_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="741" parent="529">
+    <key id="740" parent="529">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="742" parent="529">
+    <key id="741" parent="529">
       <ColNames>student_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_users_student_1</UnderlyingIndexName>
     </key>
-    <column id="743" parent="530" name="id">
+    <column id="742" parent="530" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="744" parent="530" name="start_time">
+    <column id="743" parent="530" name="start_time">
       <DasType>time|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="745" parent="530" name="end_time">
+    <column id="744" parent="530" name="end_time">
       <DasType>time|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="746" parent="530" name="test_count">
+    <column id="745" parent="530" name="test_count">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="747" parent="530" name="study_time">
+    <column id="746" parent="530" name="study_time">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="748" parent="530" name="description">
+    <column id="747" parent="530" name="description">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="749" parent="530" name="created_at">
+    <column id="748" parent="530" name="created_at">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="750" parent="530" name="sum_student_id">
+    <column id="749" parent="530" name="sum_student_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="751" parent="530">
+    <foreign-key id="750" parent="530">
       <ColNames>sum_student_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>users_student</RefTableName>
     </foreign-key>
-    <index id="752" parent="530" name="users_sumofstudy_sum_student_id_19df9423">
+    <index id="751" parent="530" name="users_sumofstudy_sum_student_id_19df9423">
       <ColNames>sum_student_id</ColNames>
     </index>
-    <key id="753" parent="530">
+    <key id="752" parent="530">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="754" parent="531" name="id">
+    <column id="753" parent="531" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="755" parent="531" name="father_name">
+    <column id="754" parent="531" name="father_name">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="756" parent="531" name="online_or_offline">
+    <column id="755" parent="531" name="online_or_offline">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="757" parent="531" name="profile_picture">
+    <column id="756" parent="531" name="profile_picture">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="758" parent="531" name="created_at">
+    <column id="757" parent="531" name="created_at">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="759" parent="531" name="role_id">
+    <column id="758" parent="531" name="role_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="760" parent="531" name="user_id">
+    <column id="759" parent="531" name="user_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="761" parent="531" name="phone">
+    <column id="760" parent="531" name="phone">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="762" parent="531">
+    <foreign-key id="761" parent="531">
       <ColNames>role_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>users_role</RefTableName>
     </foreign-key>
-    <foreign-key id="763" parent="531">
+    <foreign-key id="762" parent="531">
       <ColNames>user_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_user</RefTableName>
     </foreign-key>
-    <index id="764" parent="531" name="sqlite_autoindex_users_userprofile_1">
+    <index id="763" parent="531" name="sqlite_autoindex_users_userprofile_1">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="765" parent="531" name="sqlite_autoindex_users_userprofile_2">
+    <index id="764" parent="531" name="sqlite_autoindex_users_userprofile_2">
       <ColNames>phone</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="766" parent="531" name="users_userprofile_role_id_e1b6eebd">
+    <index id="765" parent="531" name="users_userprofile_role_id_e1b6eebd">
       <ColNames>role_id</ColNames>
     </index>
-    <key id="767" parent="531">
+    <key id="766" parent="531">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="768" parent="531">
+    <key id="767" parent="531">
       <ColNames>user_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_users_userprofile_1</UnderlyingIndexName>
     </key>
-    <key id="769" parent="531">
+    <key id="768" parent="531">
       <ColNames>phone</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_users_userprofile_2</UnderlyingIndexName>
     </key>
