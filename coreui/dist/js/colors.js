@@ -1,3 +1,6 @@
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (it) return (it = it.call(o)).next.bind(it); if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 /* global coreui */
 
 /**
@@ -7,22 +10,12 @@
  * --------------------------------------------------------------------------
  */
 
-for (const element of document.querySelectorAll('.theme-color')) {
-  const color = getComputedStyle(element, null).getPropertyValue('background-color');
-  const table = document.createElement('table');
+for (var _iterator = _createForOfIteratorHelperLoose(document.querySelectorAll('.theme-color')), _step; !(_step = _iterator()).done;) {
+  var element = _step.value;
+  var color = getComputedStyle(element, null).getPropertyValue('background-color');
+  var table = document.createElement('table');
   table.classList.add('w-100');
-  table.innerHTML = `
-      <table class="w-100">
-        <tr>
-          <td class="text-muted">HEX:</td>
-          <td class="font-weight-bold">${coreui.Utils.rgbToHex(color)}</td>
-        </tr>
-        <tr>
-          <td class="text-muted">RGB:</td>
-          <td class="font-weight-bold">${color}</td>
-        </tr>
-      </table>
-    `;
+  table.innerHTML = "\n      <table class=\"w-100\">\n        <tr>\n          <td class=\"text-muted\">HEX:</td>\n          <td class=\"font-weight-bold\">" + coreui.Utils.rgbToHex(color) + "</td>\n        </tr>\n        <tr>\n          <td class=\"text-muted\">RGB:</td>\n          <td class=\"font-weight-bold\">" + color + "</td>\n        </tr>\n      </table>\n    ";
   element.parentNode.append(table);
 }
 //# sourceMappingURL=colors.js.map

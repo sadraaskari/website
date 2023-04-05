@@ -1,2 +1,5 @@
 venv
 coreui/node_modules
+coreui/dist
+front-end/dist
+front-end/node_modules

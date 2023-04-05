@@ -16,7 +16,7 @@ Chart.defaults.plugins.tooltip.external = coreui.ChartJS.customTooltips;
 Chart.defaults.defaultFontColor = '#646470';
 
 // eslint-disable-next-line no-unused-vars
-const cardChart1 = new Chart(document.getElementById('card-chart1'), {
+var cardChart1 = new Chart(document.getElementById('card-chart1'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -72,7 +72,7 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const cardChart2 = new Chart(document.getElementById('card-chart2'), {
+var cardChart2 = new Chart(document.getElementById('card-chart2'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -127,7 +127,7 @@ const cardChart2 = new Chart(document.getElementById('card-chart2'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const cardChart3 = new Chart(document.getElementById('card-chart3'), {
+var cardChart3 = new Chart(document.getElementById('card-chart3'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -169,7 +169,7 @@ const cardChart3 = new Chart(document.getElementById('card-chart3'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const cardChart4 = new Chart(document.getElementById('card-chart4'), {
+var cardChart4 = new Chart(document.getElementById('card-chart4'), {
   type: 'bar',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April'],
@@ -214,10 +214,12 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
 
 // Random Numbers
 // eslint-disable-next-line no-mixed-operators
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+var random = function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
 // eslint-disable-next-line no-unused-vars
-const sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
+var sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
@@ -247,7 +249,7 @@ const sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), {
+var sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
@@ -277,7 +279,7 @@ const sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), {
+var sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
@@ -307,7 +309,7 @@ const sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), {
+var sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -345,7 +347,7 @@ const sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), {
+var sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -383,7 +385,7 @@ const sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), {
+var sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -419,8 +421,8 @@ const sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), 
     }
   }
 });
-const brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-const brandBoxChartOptions = {
+var brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+var brandBoxChartOptions = {
   elements: {
     line: {
       tension: 0.4
@@ -449,7 +451,7 @@ const brandBoxChartOptions = {
 };
 
 // eslint-disable-next-line no-unused-vars
-const brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
+var brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -466,7 +468,7 @@ const brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
+var brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -483,7 +485,7 @@ const brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), 
 });
 
 // eslint-disable-next-line no-unused-vars
-const brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
+var brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,

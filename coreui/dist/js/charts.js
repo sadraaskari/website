@@ -8,10 +8,12 @@
  */
 
 // random Numbers
-const random = () => Math.round(Math.random() * 100);
+var random = function random() {
+  return Math.round(Math.random() * 100);
+};
 
 // eslint-disable-next-line no-unused-vars
-const lineChart = new Chart(document.getElementById('canvas-1'), {
+var lineChart = new Chart(document.getElementById('canvas-1'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -37,7 +39,7 @@ const lineChart = new Chart(document.getElementById('canvas-1'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const barChart = new Chart(document.getElementById('canvas-2'), {
+var barChart = new Chart(document.getElementById('canvas-2'), {
   type: 'bar',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -61,7 +63,7 @@ const barChart = new Chart(document.getElementById('canvas-2'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const doughnutChart = new Chart(document.getElementById('canvas-3'), {
+var doughnutChart = new Chart(document.getElementById('canvas-3'), {
   type: 'doughnut',
   data: {
     labels: ['Red', 'Green', 'Yellow'],
@@ -77,7 +79,7 @@ const doughnutChart = new Chart(document.getElementById('canvas-3'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const radarChart = new Chart(document.getElementById('canvas-4'), {
+var radarChart = new Chart(document.getElementById('canvas-4'), {
   type: 'radar',
   data: {
     labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
@@ -107,7 +109,7 @@ const radarChart = new Chart(document.getElementById('canvas-4'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const pieChart = new Chart(document.getElementById('canvas-5'), {
+var pieChart = new Chart(document.getElementById('canvas-5'), {
   type: 'pie',
   data: {
     labels: ['Red', 'Green', 'Yellow'],
@@ -123,7 +125,7 @@ const pieChart = new Chart(document.getElementById('canvas-5'), {
 });
 
 // eslint-disable-next-line no-unused-vars
-const polarAreaChart = new Chart(document.getElementById('canvas-6'), {
+var polarAreaChart = new Chart(document.getElementById('canvas-6'), {
   type: 'polarArea',
   data: {
     labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
