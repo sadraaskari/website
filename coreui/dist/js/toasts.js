@@ -7,11 +7,11 @@
  * --------------------------------------------------------------------------
  */
 
-const toastTrigger = document.getElementById('liveToastBtn');
-const toastLiveExample = document.getElementById('liveToast');
+var toastTrigger = document.getElementById('liveToastBtn');
+var toastLiveExample = document.getElementById('liveToast');
 if (toastTrigger) {
-  toastTrigger.addEventListener('click', () => {
-    const toast = new coreui.Toast(toastLiveExample);
+  toastTrigger.addEventListener('click', function () {
+    var toast = new coreui.Toast(toastLiveExample);
     toast.show();
   });
 }
