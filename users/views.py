@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import StudentRegisterForm, BasicRegistration, ValidationCodeForm, UserRegisterForm
+from .forms import StudentRegisterForm, BasicRegistration, ValidationCodeForm, UserRegisterForm, get_support_names
 from dashboard.forms import SMSPasswordResetForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.models import User
-from .models import Role
+from .models import Role, UserProfile
 
 
 def home(request):
@@ -59,6 +59,9 @@ def register(request):
 
 def student_register(request):
     user = None
+    support_names = UserProfile.objects.filter(role__role='پشتیبان')
+    counselor_names = UserProfile.objects.filter(role__role='مشاور')
+    manager_names = UserProfile.objects.filter(role__role='مدیر')
     if request.method == 'POST':
         user_id = request.session.get('user_id')
         user = User.objects.get(id=user_id)
@@ -68,7 +71,13 @@ def student_register(request):
             return redirect('users:users-login')
     else:
         form = StudentRegisterForm(request.POST, user=user)
-    return render(request, 'users/student_register.html', {'form': form})
+    context = {
+        'form': form,
+        'support_names': support_names,
+        'counselor_names': counselor_names,
+        'manager_names': manager_names,
+    }
+    return render(request, 'users/student_register.html', context)
 
 
 def reset_password(request):

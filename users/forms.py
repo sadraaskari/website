@@ -110,18 +110,16 @@ class UserRegisterForm(forms.Form):
 class StudentRegisterForm(forms.Form):
     major = forms.ChoiceField(choices=[('1', 'math'), ('2', 'law'), ('3', 'biology')], required=True)
     grade = forms.ChoiceField(choices=[('7', '7'), ('8', '8'), ('9', '9'), ('10', '10'), ('11', '11'), ('12', '12')], required=True)
-    institute = forms.CharField(max_length=30, required=True)
     school = forms.CharField(max_length=30, required=True)
-    student_phone = forms.IntegerField(required=True)
     mother_phone = forms.IntegerField(required=True)
     father_phone = forms.IntegerField(required=True)
     home_phone = forms.IntegerField(required=True)
-    support_name = forms.ChoiceField(choices=get_support_names(), required=True)
-    counselor_name = forms.ChoiceField(choices=get_counselor_names(), required=True)
-    manager_name = forms.ChoiceField(choices=get_manager_names(), required=True)
+    support_name = forms.CharField(max_length=30, required=True)
+    counselor_name = forms.CharField(max_length=30, required=True)
+    manager_name = forms.CharField(max_length=30, required=True)
 
     class Meta:
-        fields = ['major', 'grade', 'institute', 'school', 'mother_phone', 'father_phone', 'home_phone', 'support_name', 'counselor_name', 'manager_name']
+        fields = ['major', 'grade', 'mother_phone', 'father_phone', 'home_phone', 'support_name', 'counselor_name', 'manager_name']
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user')
@@ -133,7 +131,6 @@ class StudentRegisterForm(forms.Form):
         student = Student.objects.create(student=userprofile)
         student.major = self.cleaned_data['major']
         student.grade = self.cleaned_data['grade']
-        student.institute = self.cleaned_data['institute']
         student.school = self.cleaned_data['school']
         student.mother_phone = self.cleaned_data['mother_phone']
         student.father_phone = self.cleaned_data['father_phone']

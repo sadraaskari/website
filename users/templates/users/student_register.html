@@ -1,10 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+	<title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{% static 'users/login.css' %}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<div class="login">
+	<center><!--<h2 class="active"> <img class="profile" ></img> </h2>-->
+		<div class="profile"><i class="fas fa-users"></i></div>
+	</center> <br>
+    <form method="post">
+        {% csrf_token %}
+    <select name="major" style="color: wheat;">
+		<option value="" disabled selected>رشته</option>
+        <option value="1">ریاضی فیزیک</option>
+        <option value="2">انسانی</option>
+        <option value="3">تجربی</option>
+	</select>
+     <span>رشته</span>
+
+    <br>
+    <br>
+
+    <select name="grade" style="color: wheat;">
+        <option value="" disabled selected>مقطع تحصیلی</option>
+        <option value="7">هفتم</option>
+        <option value="8">هشتم</option>
+        <option value="9">نهم</option>
+        <option value="10">دهم</option>
+        <option value="11">یازدهم</option>
+        <option value="12">دوازدهم</option>
+    </select>
+    <span>مقطع تحصیلی</span>
+    <br>
+    <br>
+
+    <input type="text" class="text" name="school" placeholder="مدرسه" required>
+    <span>نام مدرسه</span>
+    <br>
+    <br>
+
+    <input type="text" class="text" name="mother_phone" placeholder="شماره مادر" required>
+    <span>شماره مادر</span>
+    <br>
+    <br>
+
+    <input type="text" class="text" name="father_phone" placeholder="شماره پدر" required>
+    <span>شماره پدر</span>
+    <br>
+    <br>
+
+    <input type="text" class="text" name="home_phone" placeholder="شماره منزل" required>
+    <span>شماره منزل</span>
+    <br>
+    <br>
+
+    <select name="support_name" style="color: wheat;">
+        <option value="" disabled selected>نام پشتیبان</option>
+        {% for support in support_names %}
+        <option value="{{ support.user.id }}">{{ support.user.username }}</option>
+        {% endfor %}
+    </select>
+    <span>نام پشتیبان</span>
+    <br>
+    <br>
+
+    <select name="counselor_name" style="color: wheat;">
+        <option value="" disabled selected>نام مشاور</option>
+        {% for counselor in counselor_names %}
+        <option value="{{ counselor.user.id }}">{{ counselor.user.username }}</option>
+        {% endfor %}
+    </select>
+    <span>نام مشاور</span>
+    <br>
+    <br>
+
+    <select name="manager_name" style="color: wheat;">
+        <option value="" disabled selected>نام مدیر</option>
+        {% for manager in manager_names %}
+        <option value="{{ manager.user.id }}">{{ manager.user.username }}</option>
+        {% endfor %}
+    </select>
+    <span>نام مدیر</span>
+    <br>
+    <br>
 
 
-{% block content %}
-  <h2>validate</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">validate</button>
-  </form>
-{% endblock %}
+
+    
+    <button class="signin">
+      پایان
+    </button>
+    <hr>
+    </form>
+
+</div>
+</body>
+</html>
