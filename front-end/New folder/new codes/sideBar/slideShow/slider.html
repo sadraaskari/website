@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+	<head>
+		<meta charset="utf-8">
+		<title>Sidebar Dashboard Template With Sub Menu</title>
+		<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="inputs.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <!--for table--><link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<!--Replace with your tailwind.css once created-->
+
+
+	<!--Regular Datatables CSS-->
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<!--Responsive Extension Datatables CSS-->
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<!--Replace with your tailwind.css once created-->
+
+
+	<!--Regular Datatables CSS-->
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<!--Responsive Extension Datatables CSS-->
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+        <style>
+		/*Overrides for Tailwind CSS */
+
+		/*Form fields*/
+		.dataTables_wrapper select,
+		.dataTables_wrapper .dataTables_filter input {
+			color: #4a5568;
+			/*text-gray-700*/
+			padding-left: 1rem;
+			/*pl-4*/
+			padding-right: 1rem;
+			/*pl-4*/
+			padding-top: .5rem;
+			/*pl-2*/
+			padding-bottom: .5rem;
+			/*pl-2*/
+			line-height: 1.25;
+			/*leading-tight*/
+			border-width: 2px;
+			/*border-2*/
+			border-radius: .25rem;
+			border-color: #edf2f7;
+			/*border-gray-200*/
+			background-color: #edf2f7;
+			/*bg-gray-200*/
+		}
+
+		/*Row Hover*/
+		table.dataTable.hover tbody tr:hover,
+		table.dataTable.display tbody tr:hover {
+			background-color: #ebf4ff;
+			/*bg-indigo-100*/
+		}
+
+		/*Pagination Buttons*/
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			font-weight: 700;
+			/*font-bold*/
+			border-radius: .25rem;
+			/*rounded*/
+			border: 1px solid transparent;
+			/*border border-transparent*/
+		}
+
+		/*Pagination Buttons - Current selected */
+		.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+			color: #fff !important;
+			/*text-white*/
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+			/*shadow*/
+			font-weight: 700;
+			/*font-bold*/
+			border-radius: .25rem;
+			/*rounded*/
+			background: #667eea !important;
+			/*bg-indigo-500*/
+			border: 1px solid transparent;
+			/*border border-transparent*/
+		}
+
+		/*Pagination Buttons - Hover */
+		.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+			color: #fff !important;
+			/*text-white*/
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+			/*shadow*/
+			font-weight: 700;
+			/*font-bold*/
+			border-radius: .25rem;
+			/*rounded*/
+			background: #667eea !important;
+			/*bg-indigo-500*/
+			border: 1px solid transparent;
+			/*border border-transparent*/
+		}
+
+		/*Add padding to bottom border */
+		table.dataTable.no-footer {
+			border-bottom: 1px solid #e2e8f0;
+			/*border-b-1 border-gray-300*/
+			margin-top: 0.75em;
+			margin-bottom: 0.75em;
+		}
+
+		/*Change colour of responsive icon*/
+		table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
+		table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+			background-color: #667eea !important;
+			/*bg-indigo-500*/
+		}
+            td{text-align: center;}
+            td i:hover{
+                opacity: 80%;
+                transform: scale(1.2);
+                transition: 0.5s;
+            }
+	</style>
+        <script type="text/javascript" src="forMenu.js"></script>
+	</head>
+	<body>
+
+		<!--wrapper start-->
+		<div class="wrapper">
+			<!--header menu start-->
+			<div class="header">
+				<div class="header-menu">
+					<div class="title">تیم مشاوره <span>ممتاز</span></div>
+					<div class="sidebar-btn">
+						<i class="fas fa-bars"></i>
+					</div>
+					<ul>
+						<li><a href="#"><i class="fas fa-search"></i></a></li>
+						<li><a href="#"><i class="fas fa-bell"></i></a></li>
+						<li><a href="#"><i class="fas fa-power-off"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<!--header menu end-->
+			<!--sidebar start-->
+			<div class="sidebar">
+				<div class="sidebar-menu">
+					<center class="profile">
+						<img src="momo.jpg" alt="">
+						<p>سعید</p>
+					</center>
+					<li class="item">
+						<a href="#" class="menu-btn">
+							<i class="fas fa-desktop"></i><span>صفحه اصلی</span>
+						</a>
+					</li>
+					<li class="item" id="profile">
+						<a href="#profile" class="menu-btn">
+							<i class="fas fa-user-circle"></i><span>پروفایل <i class="fas fa-chevron-down drop-down"></i></span>
+						</a>
+						<div class="sub-menu">
+							<a href="#"><i class="fas fa-image"></i><span>دانش آموزان</span></a>
+							<a href="#"><i class="fas fa-address-card"></i><span>کاربران</span></a>
+						</div>
+					</li>
+					<li class="item" id="messages">
+						<a href="#messages" class="menu-btn">
+							<i class="fas fa-envelope"></i><span>پیام ها <i class="fas fa-chevron-down drop-down"></i></span>
+						</a>
+						<div class="sub-menu">
+							<a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
+							<a href="#"><i class="fas fa-envelope-square"></i><span>Sent</span></a>
+							<a href="#"><i class="fas fa-exclamation-circle"></i><span>Spam</span></a>
+						</div>
+					</li>
+					<li class="item" id="settings">
+						<a href="#settings" class="menu-btn">
+							<i class="fas fa-cog"></i><span>ویرایش <i class="fas fa-chevron-down drop-down"></i></span>
+						</a>
+						<div class="sub-menu">
+							<a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
+							<a href="#"><i class="fas fa-language"></i><span>Language</span></a>
+						</div>
+					</li>
+					<li class="item">
+						<a href="#" class="menu-btn">
+							<i class="fas fa-info-circle"></i><span>کاربران</span>
+						</a>
+					</li>
+				</div>
+			</div>
+			<!--sidebar end-->
+			<!--main container start-->
+			
+			<div class="main-container">
+	            <!--/container-->
+                <div class="card">
+					<div id="d1" style="">
+						<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em; font-size: 20px;">
+				<thead>
+					<tr>
+						<th data-priority="1">عکس</th>
+						<th data-priority="2">عنوان </th>
+						<th data-priority="3">توضیح </th>
+						<th data-priority="4">چند روزه</th>
+						<th data-priority="5">جزیات</th>
+						
+                       
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img src="1.jpg"></img></td>
+						<td>کنکور</td>
+						<td>برای دانش آموزان کنکوری</td>
+						<td>دایمی</td>
+						<td><i class="fas fa-eye"></i> <i class="fas fa-pen"></i> <i class="fas fa-trash"></i></td>
+						
+					</tr>
+
+
+					<tr>
+						<td><img src="background.jpg"></img></td>
+						<td>تندخوانی</td>
+						<td>برای عموم</td>
+						<td>یک ساله</td>
+						<td><i class="fas fa-eye"></i> <i class="fas fa-pen"></i> <i class="fas fa-trash"></i></td>
+					</tr>
+				</tbody>
+
+			</table>
+					</div>
+					
+			</div>
+			<!--main container end-->
+            <div class="card">
+                <div class="divForm">
+                    <form method="post">
+                        <input type="text" placeholder="عنوان">
+                        <p style="display: inline;">عکس:</p>
+                        <input type="file" placeholder="عکس">
+                        <hr>
+                        
+                        <textArea placeholder="توضیحات..."></textArea><hr>
+                        <p>از تاریخ</p><input type="date"> <p> تا تاریخ</p><input type="date"><br>
+                        <p style="display: inline;">همیشگی:</p><input type="checkbox"><hr>
+                        <input type="submit" value="ثبت">
+                    </form>
+                </div>
+			</div>
+		</div>
+</div>
+		<!--wrapper end-->
+        
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$(".sidebar-btn").click(function(){
+				$(".wrapper").toggleClass("collapse");
+			});
+		});
+		</script>
+        <!--for table-->
+       <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			var table = $('#example').DataTable({
+					responsive: true
+				})
+				.columns.adjust()
+				.responsive.recalc();
+		});
+	</script>
+
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>selectorDivs</title>
+		<style type="text/css">
+			.container{
+				width: 10%;
+				font-size: 25px;
+				display: flex;
+			}
+			#d1{
+				width: 50%;
+				border: 1px solid #202020;
+				border-bottom-left-radius: 10px;
+				border-top-left-radius: 10px;
+				background-color: blue;
+				color: white;
+				padding: 10px;
+			}
+			#d2{
+				width: 50%;
+				border: 1px solid #202020;
+				border-bottom-right-radius: 10px;
+				border-top-right-radius: 10px;
+				background-color: white;
+				color: blue;
+				padding: 10px;
+			}
+			#d1:hover{
+				background-color: blue;
+				color: white;
+				opacity: 70%;
+				transition: 0.5s;
+			}
+			#d2:hover{
+				background-color: blue;
+				color: white;
+				opacity: 70%;
+				transition: 0.5s;
+			}
+		</style>
+		<script type="text/javascript">
+			var d1 = document.getElementById("d1");
+			var d2 = document.getElementById("d2");
+			function onclickDiv(d){
+				if(d == 1){
+					   document.getElementById("d1").setAttribute("style","background-color:blue;");
+					   document.getElementById("d1").setAttribute("style","color:white;");
+					   document.getElementById("d2").setAttribute("style","background-color:white;");
+					   document.getElementById("d2").setAttribute("style","color:blue;");
+				   }else{
+					   document.getElementById("d2").setAttribute("style","background-color:blue;");
+					   document.getElementById("d2").setAttribute("style","color:white;");
+					   document.getElementById("d1").setAttribute("style","background-color:white;");
+					   document.getElementById("d1").setAttribute("style","color:blue;");
+				   }
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div id="d1"  onClick="onclickDiv(1);">1</div>
+			<div id="d2"  onClick="onclickDiv(2);">2</div>
+		</div>
+	</body>
+</html>

@@ -87,19 +87,21 @@ class BasicRegistration(UserCreationForm):
 class UserRegisterForm(forms.Form):
     online_or_offline = forms.ChoiceField(choices=[('1', 'online'), ('0', 'offline')], required=True)
     role = forms.ModelChoiceField(queryset=Role.objects.all(), required=True)
+    institute = forms.CharField(max_length=30, required=True)
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user')
         super().__init__(*args, **kwargs)
 
     class Meta:
-        fields = ['online_or_offline', 'role']
+        fields = ['online_or_offline', 'role', 'institute']
 
     def save(self, commit=True):
         user = self.user
         userprofile = UserProfile.objects.get(user=user)
         userprofile.online_or_offline = self.cleaned_data['online_or_offline']
         userprofile.role = self.cleaned_data['role']
+        userprofile.institute = self.cleaned_data['institute']
         if commit:
             userprofile.save()
         return userprofile

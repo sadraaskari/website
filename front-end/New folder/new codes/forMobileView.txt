@@ -1,0 +1,18 @@
+@media (max-width: 480px) {
+.size-controller {
+  width: 100%;
+}
+.mobile-16px-font {
+  font-size: 16px !important;
+}
+.mobile-hide {
+  display: none !important;
+}
+
+.mobile-show {
+  
+}
+.mobile-100-percent {
+  width: 100% !important;
+}
+}

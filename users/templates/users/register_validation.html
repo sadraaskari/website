@@ -1,10 +1,50 @@
-{% extends 'users/base.html' %}
-
-{% block content %}
-  <h2>validate</h2>
+<!doctype html>
+{% load static %}
+<html dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ثبت نام</title>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{% static 'users/login.css' %}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+<div class="login" style="height: 600px;">
+	<center><!--<h2 class="active"> <img class="profile" ></img> </h2>-->
+		<div class="profile"><i class="fas fa-user"></i></div>
+	</center>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">validate</button>
+    <input type="text" class="text" name="phone" placeholder="شماره موبایل...">
+     <span>شماره موبایل</span>
+      <br>
+    
+     <br>
+
+    <input type="text" class="text" name="first_name" placeholder="نام">
+    <span>نام</span>
+    <br>
+	<br>
+
+    <input type="text" class="text" name="last_name" placeholder="نام خانوادگی">
+    <span>نام خانوادگی</span>
+    <br>
+    <br>
+      <input type="text" class="text" name="father_name" placeholder="نام پدر">
+    <span>نام پدر</span>
+
+
+
+	<a href="{% url 'users:users-register_validation_code'%}" style="text-decoration: none; top: 0;"><button class="signin">
+       ادامه
+    </button></a>
+
+
+    <hr>
+
+    <a href="{% url 'users:users-login' %}">آیا اکانت دارید؟</a>
   </form>
-{% endblock %}
+
+</div>
+</body>
+</html>

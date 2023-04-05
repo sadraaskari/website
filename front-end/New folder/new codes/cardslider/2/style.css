@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	background-color: #202020;
+	min-height: 100vh;
+}
+.swiper{
+	width: 950px;
+}
+.card{
+	position: relative;
+	border: 1px solid #F87604;
+	widtذh: 280px;
+	height: 80vh;
+	border-radius: 20px;
+}
+.card::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #F87604;
+	clip-path: circle(55% at 0 0);
+	border-top-left-radius: 20px;
+}
+.card .image{
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+}
+.card .image img{
+	width: 140px;
+	height: 140px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 3px solid #000;
+}
+.card .card-content{
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
+}
+.card .social-media{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.card .social-media i{
+	margin-top: 10px;
+	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.card .name-profession{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 10px;
+	color: white;
+}
+.name-profession .name{
+	font-size: 20px;
+	font-weight: 600;
+}
+.name-profession .profession{
+	font-size: 15px;
+	font-weight: 500;
+}
+.card .button{
+	justify-content: space-around;
+	display: flex;
+	margin-top: 20px;
+	width: 110%;
+}
+.card .button button{
+	background-color: orange;
+	color: black;
+	border: none;
+	outline: none;
+	padding: 8px 22px;
+	border-radius: 20px;
+	font-size: 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.card .button button:hover{
+	background: white;
+	color:orange;
+}

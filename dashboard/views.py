@@ -1,19 +1,30 @@
 from django.shortcuts import render, redirect
 from .forms import StudentTicketForm
 from users.models import UserProfile
-from .models import Option, Ticket
+from .models import Option, Ticket, SliderImage
+from courses.models import Tutorial
 
 
 def home(request):
-    dash = {
-        'title': 'Dashboard',
-        'heading': 'Dashboard',
-        'subheading': 'This is the dashboard page.',
-    }
+    slider_images = SliderImage.objects.all()
+    tutorials = Tutorial.objects.all()
+    user = request.user
+
     context = {
-        'dash': dash
+        'slider_images': slider_images,
+        'tutorials': tutorials,
+        'user': user,
     }
-    return render(request, 'dashboard/home.html', context)
+    return render(request, 'dashboard/dashboard.html', context)
+
+
+def card_slider(request):
+    users = UserProfile.objects.all()
+
+    context = {
+        'users': users,
+    }
+    return render(request, 'dashboard/cardslider.html', context)
 
 
 def about(request):

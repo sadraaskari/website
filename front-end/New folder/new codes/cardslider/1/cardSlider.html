@@ -1,0 +1,86 @@
+<html>
+<head>
+	<link rel="stylesheet" href="cardSliderStyle.css">
+</head>
+<body class="animated fadeIn">
+    <div class="body-overlay">
+        <div class="container">
+            <div class="outer-top">
+                <h2 class="aka animated fadeIn"><a>Momtaz</a></h2>
+                <div class="btn-explore">
+                    <a href="" class="">
+                    <svg version="1.0" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 77.082 61.834" xml:space="preserve">
+                        <ellipse cx="38.541" cy="10.667" rx="11.166" ry="10.667"/>
+                        <ellipse cx="38.541" cy="51.167" rx="11.166" ry="10.667"/>
+                        <ellipse cx="11.166" cy="31.208" rx="11.166" ry="10.667"/>
+                        <ellipse cx="65.916" cy="31.208" rx="11.166" ry="10.667"/>
+                    </svg>
+                        Articles
+                    </a>
+                </div>
+                <div class="btn-burger"><a class="" href=""><img src="http://semicorpus.com/yarden/icon-burger.png"><img src="http://semicorpus.com/yarden/icon-burger.png"></a></div>
+            </div>
+            <div class="leftandin animated" id="leftandin1">
+                <div class="outer-left">
+                    <h6 class="timeline animated fadeIn">2018 &nbsp; — &nbsp; P-frame</h6>
+                    <h1 class="headline animated fadeInLeft">  رتبه برتر شو</h1>
+                    <h3 class="title animated bounceInLeft">The Answer is the Nature</h3>
+                    <p class="description animated fadeInDown delay-06s">با روش های جدید دکتر ممتاز رتبه 1 کنکور شوید</p>
+                    <a class="fadeIn"><button class="cta animated pulse"><p class="animated fadeIn delay-06s">See Article</p></button></a>
+                </div>
+                <div class="inner animated fadeIn" id="inner1">
+                    <div class="toggler">
+                        <!--
+                        <a class="next-article" href="#leftandin2" onclick="toggleNext();">
+                            <h4 class="article-position">01</h4>
+                            <img src="img/icon-next.png" height="18px" width="18px">
+                        </a>
+                        -->
+                        <a class="next-article" href="#leftandin2" onclick="toggleNext();">
+                            <h4 class="article-position">01</h4>
+                            <img src="http://semicorpus.com/yarden/icon-next.png" height="18px" width="18px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="leftandin2 displaynone fadeIn" id="leftandin2">
+                <div class="outer-left">
+                    <h6 class="timeline animated fadeIn">2018 &nbsp; — &nbsp; P-frame</h6>
+                    <h1 class="headline animated fadeInLeft">Lorem Ipsum<br>Recoda</h1>
+                    <h3 class="title animated bounceInLeft">Semi Corpus Plextendis</h3>
+                    <p class="description animated fadeInDown delay-06s">سسبمییمیمیسل</p>
+                    <a class="fadeIn"><button class="cta animated pulse"><p class="animated fadeIn delay-06s">See Article</p></button></a>
+                </div>
+                <div class="inner animated fadeIn" id="inner2">
+                    <div class="toggler">
+                        <!--
+                        <a class="previous-article" href="#leftandin1" onclick="togglePrevious();">
+                            <img src="img/icon-previous.png" height="18px" width="18px">
+                        </a>
+                        -->
+                        <a class="next-article" href="#leftandin1" onclick="toggleNext();">
+                            <h4 class="article-position">02</h4>
+                            <img src="background.jpg" height="18px" width="18px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleNext() {
+            var element = document.getElementById('leftandin1');
+            element.classList.toggle('delay-06s');
+            element.classList.toggle('fadeout');
+            element.classList.toggle('displaynone');
+                var element = document.getElementById('leftandin2');
+                element.classList.toggle('display');
+                element.classList.toggle('animated');
+                var element = document.getElementById('inner2');
+                element.classList.toggle('delay-06s');
+                element.classList.toggle('fadeIn');
+        }
+    </script>
+    </script>
+</body>
+</html>

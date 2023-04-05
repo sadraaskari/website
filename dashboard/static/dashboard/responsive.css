@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+	@media only screen and (max-width: 750px){
+		.image, .text{
+			width: 100%;
+		}
+		.img{
+			width: 160%;
+		}
+		.skewed{
+			display: block;
+			width: 25em;
+		}
+		.skewed .image::before{
+			width: 120%;
+			height: 40%;
+			top: -5em;
+			left: 50%;
+			transform:
+				translateX(-50%) rotate(5deg);
+			top :initial;
+			bottom: -5em;
+		}
+
+		}

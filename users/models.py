@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Role(models.Model):
     role = models.CharField(max_length=30, default='')
-    permission = models.JSONField(default=dict)
+    permission = models.JSONField(default=dict, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -17,6 +17,7 @@ class UserProfile(models.Model):
     father_name = models.CharField(max_length=30, default='')
     phone = models.CharField(max_length=30, default='', unique=True)
     online_or_offline = models.IntegerField(default=0)
+    institute = models.CharField(max_length=30, default='')
     role = models.ForeignKey(Role, on_delete=models.CASCADE, default=4)
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)
     created_at = models.DateTimeField(default=timezone.now)
@@ -30,7 +31,6 @@ class Student(models.Model):
     id = models.AutoField(primary_key=True)
     major = models.IntegerField(default=0)
     grade = models.IntegerField(default=0)
-    institute = models.CharField(max_length=30, default='')
     school = models.CharField(max_length=30, default='')
     mother_phone = models.CharField(max_length=30, default='')
     father_phone = models.CharField(max_length=30, default='')
